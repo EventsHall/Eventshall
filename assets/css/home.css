@@ -1,12 +1,12 @@
-body{background-color:  #ffcbb3;}
+body{background-color:white;}
  .navbar {
       margin-bottom: 0;
       border-radius: 0;
 
     }
     .navbar-custom{
-      color:#859aad;
-      background:#00091a;
+      color:#1B7C7E;
+      background:#1B7C7E;
     }
     .nav.navbar-nav.navbar-right li a {
     color: white;
@@ -15,7 +15,7 @@ body{background-color:  #ffcbb3;}
     
     /* Add a gray background color and some padding to the footer */
   footer {
-      background-color: gray;
+      background-color: #1B7C7E;
       padding: 25px;
     }
     
