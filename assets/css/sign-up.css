@@ -11,5 +11,11 @@ body{background-color: white;}
         border:5px yellow;
       }
       .error{
-        color:black;
+        color:white;
       }
+
+  .alert{
+	display: none;
+}
+
+
