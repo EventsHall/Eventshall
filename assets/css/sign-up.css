@@ -1,0 +1,15 @@
+body{background-color: white;}
+	    form{
+	      background:#006666;
+	      padding:40px; 
+	      -webkit-box-shadow:9px 15px 39px 9px rgba(0,0,0,0.75);
+	       -moz-box-shadow:9px 15px 39px 9px rgba(0,0,0,0.75);
+	       -box-shadow:9px 15px 39px 9px rgba(0,0,0,0.75);
+	       color: white;
+	    }
+      .valid{
+        border:5px yellow;
+      }
+      .error{
+        color:black;
+      }
