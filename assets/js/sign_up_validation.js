@@ -1,5 +1,5 @@
  $(document).ready(function(){
- 
+
     $("#signUp").validate({
       rules:{
         username:{
@@ -61,4 +61,19 @@
 
       }
     });
-  });
+
+    $('#register').click(function(event){
+      alert("hi");
+    event.preventDefault();
+    var form_data = $('#signUp').serialize();
+    console.log(form_data)
+    $.ajax({ 
+        url:'action.php',
+        method: 'post',
+        data: form_data + '&action=register'
+    }).done(function(result){
+      $('.alert').show();
+      $('#result').html(result);
+    })
+  })
+});
