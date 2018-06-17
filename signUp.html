@@ -36,11 +36,11 @@
          <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="home.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                       <li><a href="searchpage.html"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-                           <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>SignIn</a></li>
-                                <li class="active"><a  href="signUp.html"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>
-                                     <li ><a href="aboutUs.html"><span class="glyphicon glyphicon-book"></span>AboutUs</a></li>
-                                         <li><a href="contactUs.html"><span class="glyphicon glyphicon-earphone"></span> ContactUs</a></li>
+                <li><a href="searchpage.html"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>SignIn</a></li>
+                <li class="active"><a  href="signUp.html"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>
+                <li ><a href="aboutUs.html"><span class="glyphicon glyphicon-book"></span>AboutUs</a></li>
+                <li><a href="contactUs.html"><span class="glyphicon glyphicon-earphone"></span> ContactUs</a></li>
                    
               </ul>
               
@@ -50,11 +50,19 @@
   <br>
   
   <div class="container">
+    <div class="col-md-6 col-md-offset-3">
+              <div class="alert alert-danger alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-leble="Close">x</button>
+              <div id="result"></div>
+            
+              </div>
+          
+          </div>
   	<div class="col-sm-offset-3 col-sm-6">
   		<div class="tab-content">
 
   			<form id="signUp" name="signup_form" action=" "  method="post">
-         <h2 style="text-align: center;">Registration Here</h2>
+         <h2 class="text-center">Registration Here</h2>
       <!-- Start User Name Input Tag  -->
       <div class="form-group">
            <label for="username">Enter Your Name:</label>
@@ -105,7 +113,7 @@
 
      <!-- Submit Btton Tag-->
      <div class="form-group">
-           <button type="submit" class="btn btn-success btn-block">Submit</button>
+           <button type="submit" class="btn btn-success btn-block" id="register">Submit</button>
            </div>
      </form>
 
