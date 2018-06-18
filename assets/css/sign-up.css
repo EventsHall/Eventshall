@@ -8,10 +8,10 @@ body{background-color: white;}
 	       color: white;
 	    }
       .valid{
-        border:5px yellow;
+        border: solid green;
       }
       .error{
-        color:white;
+        color:#4d0026;
       }
 
   .alert{

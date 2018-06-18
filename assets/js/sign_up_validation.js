@@ -1,15 +1,22 @@
  $(document).ready(function(){
 
-    $("#signUp").validate({
+jQuery.validator.addMethod("alpha", function(value, element) { 
+      return this.optional(element) || /^[a-zA-Z ]*$/.test(value)
+  // just ascii letters
+},"Alphabets and space like ram rajput only");
+  
+    $("#signUp").validate({//("^[a-zA-Z]+$")
+      
       rules:{
         username:{
           required: true,
+          alpha:true,
           minlength:5
-          
         },
         mobile_number:{
           required: true,
           number:true,
+         
             minlength:10,
             maxlength:10
         },
@@ -24,7 +31,7 @@
         },
         confirm_password:{
           required:true,
-          equalTo:"password"
+          equalTo:"#password"
         },
         check1:{
           required:true,
@@ -41,7 +48,7 @@
         
         mobile_number:{
           required:"Please Enter your Mobile number",
-          number:"Enter only numbers not characters like a,b,c,d",
+          number:"Enter only numbers 0123456789",
           minlength:" Enter minimum 10 numbers digit",
           maxlength:"Enter maximum only 10 numbers digit"
         },
@@ -62,8 +69,18 @@
       }
     });
 
+   
+    jQuery.validator.setDefaults({
+  debug: true,
+  success: "valid"
+});
+var form = $( "#signUp" );
+form.validate();
+$( "button" ).click(function() {
+  alert( "Valid: " + form.valid() );
+
+});
     $('#register').click(function(event){
-      alert("hi");
     event.preventDefault();
     var form_data = $('#signUp').serialize();
     console.log(form_data)
