@@ -9,11 +9,15 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	  <script
-	  src="https://code.jquery.com/jquery-3.3.1.min.js"
-	  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-	  crossorigin="anonymous"></script>
-    
+	  <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script type="text/javascript">
+$('.alphaonly').bind('keyup blur',function(){ 
+    var node = $(this);
+    node.val(node.val().replace(/[^a-z]/g,'') ); }
+);
+</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.js"></script>
 	  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 	  <link rel="stylesheet" type="text/css" href="assets/css/home.css">
 	  <link rel="stylesheet" type="text/css" href="assets/css/sign-up.css">
@@ -66,14 +70,14 @@
       <!-- Start User Name Input Tag  -->
       <div class="form-group">
            <label for="username">Enter Your Name:</label>
-           <input type="text" class="form-control" id="username" placeholder="Enter Your Name" name="username" >
+           <input type="text" class="form-control" id="username" placeholder="Enter Your Name" name="username" class="alphaonly">
       </div>
       <!-- End User Name Input Tag  -->
 
       <!-- Start Mobile Number Input Tag -->
       <div class="form-group">
            <label for="mobile_number">Mobile No:</label>
-           <input type="text" class="form-control" id="mobile_number" style="size: 10;" placeholder="Mobile or Contact" name="mobile_number" ">
+           <input type="number" class="form-control" id="mobile_number" maxlength="10"  placeholder="Mobile or Contact" name="mobile_number" maxlength="10">
           
       </div>
       <!-- End Mobile Number Input Tag -->
