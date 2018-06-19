@@ -2,7 +2,7 @@
 
 	class DbConnect {
 		private $host = 'localhost';
-		private $dbname = 'myeventshall';
+		private $dbname = 'myeventshall_db';
 		private $user = 'root';
 		private $password = '';
 
