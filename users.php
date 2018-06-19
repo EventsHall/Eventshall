@@ -10,7 +10,7 @@ class Users
 	protected $activated;
 	protected $token;
 	protected $created_on;
-	protected $conn;
+	public $conn;
 
 	function setId($id) { $this->id = $id; }
 	function getId() { return $this->id; }
