@@ -76,12 +76,9 @@
       });
       
       $( "#register" ).click(function(event) {
-        var form = $( "#signUp" );
-        //form.validate();
-        if(form.valid()){
-          event.preventDefault();
+         var form = $( "#signUp" );
+         if(form.valid()){
           var form_data = $('#signUp').serialize();
-          console.log(form_data)
           $.ajax({ 
               url:'action.php',
               method: 'post',
@@ -89,12 +86,12 @@
           }).done(function(result){
             $('.alert').show();
             $('#result').html(result);
+            
           })
 
         }else{
           $('.alert').show();
-            $('#result').html("form not validate please validate first");
-
+          $('#result').html("form not validate please validate first");
         }
 
       });
