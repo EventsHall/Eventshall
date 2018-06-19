@@ -74,14 +74,11 @@
         debug: true,
         success: "valid"
       });
-      var form = $( "#signUp" );
-      form.validate();
-      $( "button" ).click(function() {
-        alert( "Valid: " + form.valid() );
-
-      });
       
-    $('#register').click(function(event){
+      $( "#register" ).click(function(event) {
+        var form = $( "#signUp" );
+        //form.validate();
+        if(form.valid()){
           event.preventDefault();
           var form_data = $('#signUp').serialize();
           console.log(form_data)
@@ -93,5 +90,13 @@
             $('.alert').show();
             $('#result').html(result);
           })
-        })
+
+        }else{
+          $('.alert').show();
+            $('#result').html("form not validate please validate first");
+
+        }
+
+      });
+
 });
