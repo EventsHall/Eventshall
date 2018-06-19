@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 
 	if(isset($_POST['action']) && ($_POST['action'] == 'register')) {
 		$users = validate_reg_form();
@@ -14,6 +15,7 @@
 
 		if($objUser->saveIntoTable()){
 			echo "data saved successfully";
+			$_SESSION['username']= $users['username'];
 		}else{
 			echo " data saved unsuccessful";
 		}
