@@ -24,7 +24,7 @@
         },
         confirm_password:{
           required:true,
-          equalTo:"password"
+          equalTo:"#password"
         },
         check1:{
           required:true,
@@ -63,7 +63,6 @@
     });
 
     $('#register').click(function(event){
-      alert("hi");
     event.preventDefault();
     var form_data = $('#signUp').serialize();
     console.log(form_data)

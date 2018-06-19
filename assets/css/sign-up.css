@@ -11,7 +11,7 @@ body{background-color: white;}
         border:5px yellow;
       }
       .error{
-        color:white;
+        color:orange;
       }
 
   .alert{
