@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	if(!isset($_SESSION['username'])){
-		//header("Location:login.html");
+		header("Location:login.html");
 	}
 
 
@@ -43,35 +43,35 @@
               </ul>
           </div>  
       </div>
-  </div>
-  <br>
-  <div class="container " style="height:1200px">
-  <div class="row">
-    <div id="heading1" class="col-lg-12 text-justify"style="text-align: center;"><h1>Welcome<b style="color: blue;"> <?php echo $_SESSION ['username'] ?>
-    </b>you are succesfully Registered.</h1>
-    <div class="col-lg-12 text-justify">
-    <h3> Select your service who you are providing. Fill all details of your services in forms and upload your picture.</h3>
-    </div>
-    </div>
-    </div>
-    </div>
-    <br>
-      <div class="container">
-  <h2 style="text-align: center; ">Select one Form</h2>
-  <ul class="nav nav-tabs nav-justified">
-    <li class="active"><a data-toggle="tab" href="#catering">Catering Services Form</a></li>
-    <li><a data-toggle="tab" href="#events">Hall For Events Form</a></li>
-    <li><a data-toggle="tab" href="#studio">Photography Studio Form</a></li>
-    
-  </ul>
+  </div><br>
+  <div class="container ">
+      <div class="row">
+          <div id="heading1" class="col-lg-12 text-justify"style="text-align: center;">
+              <h1>Welcome<b style="color: blue;"> <?php echo $_SESSION ['username'] ?>
+                  </b>you are succesfully Registered.
+              </h1>
+          <div class="col-lg-12 text-justify">
+              <h3> Select your service who you are providing. Fill all details of your services in forms and upload your picture.</h3>
+          </div>
+          </div>
+      </div>
+  </div><br>
+      
   <div class="container">
-<div class="col-offset-3 col-sm-6">
+      <h2 style="text-align: center; ">Select one Form</h2>
+      <div class="row">
+      <ul class="nav nav-tabs nav-justified bg-info">
+          <li class="active"><a data-toggle="tab" href="#catering">Catering Services Form</a></li>
+          <li><a data-toggle="tab" href="#events">Hall For Events Form</a></li>
+          <li><a data-toggle="tab" href="#studio">Photography Studio Form</a></li>
+      </ul>
+      <div class="col-offset-3 col-md-4">
   <div class="tab-content">
     <div id="catering" class="tab-pane fade in active">
 <form>
   <div class="form-group">
     <label for="guesthouse name">Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Name:</label>
-           <input type="text" class="form-control" id="guesthouse_name" placeholder="Email" name="guesthouse_name">
+           <input type="text" class="form-control" id="guesthouse_name" placeholder="Name" name="guesthouse_name">
   </div>
 <div class="form-group">
     <label for="address">Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Address:</label>
