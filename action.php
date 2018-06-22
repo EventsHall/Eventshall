@@ -16,7 +16,6 @@
 		if($objUser->saveIntoTable()){
 			echo "data saved successfully";
 			$_SESSION['username']= $users['username'];
-			$_SESSION['mobile_number']= $users['monumber'];
 		}else{
 			echo " data saved unsuccessful";
 		}
