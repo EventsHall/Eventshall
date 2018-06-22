@@ -55,7 +55,22 @@ class Users
 		}
 
 	}
-}
+
+	function getUserByEmail(){
+		$stmt=$this->conn->prepare('SELECT * FROM users WHERE email = :email');
+		$stmt->bindParam(':email',$this->email);
+		try {
+			if($stmt->execute()){
+				$user = $stmt->fetch(PDO::FETCH_ASSOC);
+				}
+			}
+		catch(Exception $e) {
+				echo $e->getMessage();
+			}
+			return $user;
+		}
+	}
+
 
 
 
