@@ -22,6 +22,36 @@
 		
 	}
 
+	//login form validation//
+
+	if(isset($_POST['action']) && ($_POST['action'] == 'login')) {
+		$users = validate_login_form();
+		require 'users.php';
+		$objUser = new Users();
+		$objUser->setEmail($users['email']);
+		$objUser->setPassword(md5($users['password']));
+		$rememberMe = isset($_POST['remember-me']) ? 1 : 0 ;
+		$userData = $objUser->getUserByEmail();
+		if(is_array($userData) && count($userData) > 0){ 
+			if($userData['password'] == $objUser->getPassword()) { 
+				if($rememberMe == 1) {
+					setcookie('email',$objUser->getEmail());
+					setcookie('password',base64_encode($users['password']));
+
+				}
+				echo json_encode(["status" => 0, "msg" => "Login Successfull"]);
+
+			}else{
+				echo json_encode(["status" => 0, "msg" => "E-mail or password is wrong"]);
+
+			}
+		}else{
+			 echo json_encode(["status" => 0, "msg" => "E-mail or password not found"]);
+		}
+
+
+	}
+
 	function validate_reg_form(){
 		$users['username'] = filter_input(INPUT_POST,'username' ,FILTER_SANITIZE_STRING);
 		if(false == $users['username']){
@@ -59,5 +89,22 @@
 
 		return $users;
 	}
+
+	function validate_login_form(){
+		$users['email'] = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+		if(false == $users['email']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid Email"]);
+			exit;
+		}
+
+		$users['password'] = filter_input(INPUT_POST,'password' , FILTER_SANITIZE_STRING);
+		if(false == $users['password']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid password"]);
+			exit;
+		}
+
+		return $users;
+	}
+
 
  ?>
