@@ -48,10 +48,16 @@ class Users
 		$stmt->bindParam(':token',$this->token);
 		$stmt->bindParam(':created_on',$this->created_on);
 
-		if($stmt->execute()){
-			return true;
-		}else{
-			return false;
+		try {
+			if($stmt->execute()){
+				return true;
+			}else{
+				return false;
+			}
+			
+		} catch (Exception $e) {
+			echo $e->getMessage();
+			
 		}
 
 	}
