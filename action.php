@@ -1,8 +1,7 @@
 <?php 
 	session_start();
 
-	if(isset($_POST['action']) && ($_POST['action'] == 'register')) {
-		$users = validate_reg_form();
+	function setUserData($users){
 		require 'users.php';
 		
 		$objUser = new Users();
@@ -13,7 +12,12 @@
 		$objUser->setActivated(0);
 		$objUser->setToken(NULL);
 		$objUser->setCreated_on(date('y-m-d'));
+		return $objUser;
+	}
 
+	if(isset($_POST['action']) && ($_POST['action'] == 'register')) {
+		$users = validate_reg_form();
+		$objUser = setUserData($users);
 		$userData = $objUser->getUserByEmail();
 		if($userData['email'] == $users['email'] ){
 			echo "email already registered";
