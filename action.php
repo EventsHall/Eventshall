@@ -4,6 +4,7 @@
 	if(isset($_POST['action']) && ($_POST['action'] == 'register')) {
 		$users = validate_reg_form();
 		require 'users.php';
+		
 		$objUser = new Users();
 		$objUser->setName($users['username']);
 		$objUser->setMobile($users['monumber']);
@@ -13,9 +14,51 @@
 		$objUser->setToken(NULL);
 		$objUser->setCreated_on(date('y-m-d'));
 
+		$userData = $objUser->getUserByEmail();
+		if($userData['email'] == $users['email'] ){
+			echo "email already registered";
+			exit;
+		}
+
+		
+
 		if($objUser->saveIntoTable()){
-			echo "data saved successfully";
-			$_SESSION['username']= $users['username'];
+			$lastId = $objUser->conn->lastInsertId();
+			$token = sha1($lastId);
+			$url = 'http://'.$_SERVER['SERVER_NAME'].'/my_project/Eventshall/verify.php?id='.$lastId.'&token='.$token;
+			$html = "<div>Thanks for the registration with localhost. Please click this link to complete your registration<br>".$url."</div>";
+
+			
+			require 'phpMailer/PHPMailerAutoload.php';
+			require 'phpMailer/credential.php';
+			
+			$mail = new PHPMailer;
+
+			$mail->isSMTP();                                      // Set mailer to use SMTP
+			$mail->Host = 'smtp.gmail.com;smtp2.example.com';  // Specify main and backup SMTP servers
+			$mail->SMTPAuth = true;                               // Enable SMTP authentication
+			$mail->Username = EMAIL;              				   // SMTP username
+			$mail->Password = PASSWORD;                           // SMTP password
+			$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+			$mail->Port = 587;                                    // TCP port to connect to
+
+			$mail->setFrom(EMAIL, 'EventsHall');
+			//$mail->addAddress('joe@example.net', 'Joe User');     // Add a recipient
+			$mail->addAddress($objUser->getEmail());               // Name is optional
+			$mail->addReplyTo(EMAIL);
+			
+			$mail->isHTML(true);                                  // Set email format to HTML
+
+			$mail->Subject = 'Confirm your Email';
+			$mail->Body    = $html;
+
+			if(!$mail->send()) {
+			    echo 'Message could not be sent.';
+			    echo 'Mailer Error: ' . $mail->ErrorInfo;
+			} else {
+			    echo 'Congratulation your registration done on our site. Please verify your email';
+			}
+		
 		}else{
 			echo " data saved unsuccessful";
 		}
