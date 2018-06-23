@@ -8,6 +8,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+  <style type="text/css">
+    body{background-color: white;}
+    form{
+      background:#006666;
+      padding:10px; 
+     
+       color: white;
+    }
+  </style>
 </head>
 
 <body>
@@ -49,12 +58,14 @@
 
 
 <div class="container">
-  <div class="col-lg-12">
+  <div class="col-lg-12"style="background: #1B7C7E; color: white">
           <hr>
-          <h2 class="intro-text text-center"><strong>Contact Form</strong>
+          <h2 class="intro-text text-center" ><strong>Contact Form</strong>
           </h2>
           <hr>
         </div>
+        <br>
+        <br>
         <div class="row">
 <!-------- start our information tag ------->
           <div class="col-md-8">
@@ -63,7 +74,7 @@
               <strong>8090587674 , 8299819953 , 8960491286</strong>
             </p>
              <p><strong>Email</strong> <span class="glyphicon glyphicon-envelope"></span>     :
-               <strong><a href="mailto:name@example.com"><b>vinodverma150791@gmail.com</b></a></strong>
+               <strong><a href="mailto:name@example.com"><b>eventshall007@gmail.com</b></a></strong>
              </p>
              <p><strong>Address</strong> <span class="glyphicon glyphicon-home"></span>:
                <strong>228 E.W.S. gunjan vihar
@@ -75,42 +86,42 @@
              <br><br><p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14292.76340863821!2d80.29649622118923!3d26.417316995862087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDI1JzAyLjMiTiA4MMKwMTgnMTguOSJF!5e0!3m2!1sen!2sin!4v1528703658212" width="60%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe></p>
           </div>
 <!----- close google map link ----->
-
+<br>
           <div class="col-md-4">
-            <h4><strong><center><p>HELLO</p>          <p>WE ARE ALWAYS READY TO SERVE YOU!</p></center></strong></h4>
+             <form id="ContactUs" name="ContactUs" action=" "  method="post">
+            <h4><strong><center><p>HELLO,</p>          <p>WE ARE ALWAYS READY TO SERVE YOU!</p></center></strong></h4>
             <!---strat name input tag ----->
-            <div class="form-group">
-                <label>Name</label>
-                <input type="text" class="form-control">
+            <br><div class="form-group">
+             <input type="text" id="text1" class="form-control" placeholder="Name">
               </div>
 <!--------close name input tag -----> 
 
 <!-------- start email input tag ------->
 
               <div class="form-group">
-                <label>Email</label>
-                <input type="Email" class="form-control">
+                
+                <input type="Email" class="form-control" placeholder="Email">
               </div>
 <!---------close email input tag ------->
 
 <!---------- strat mobile no. tag ------->
               <div class="form-group ">
-                <label>Mobile No.</label>
-                <input type="tel" class="form-control">
+                
+                <input type="tel" class="form-control" placeholder="Mobile No.">
               </div>
 <!---------- close mobile no. tag ------>
 
 <!---------- start message tag -------->
               <div class="form-group">
-                <label>Message</label>
-                <textarea class="form-control" rows="3"></textarea>
+                
+                <textarea class="form-control" rows="3" placeholder="Message,Suggestion"></textarea>
               </div>
 <!---------- close message tag ----->
 
 <!----- start submit btn tag ------->
               <div class="form-group">
                 <input type="hidden" name="save" value="Contact">
-                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="submit" class="btn btn-success btn-block">Submit</button>
           </div>
 <!-------- close submit btn tag ----->
 
@@ -119,10 +130,13 @@
 </div>
 
 <!---- contact us page close ------->
+<br>
+<br>
 
 <footer class="container-fluid text-center">
-  <p>@Copy right www.EventsHall.com 2018-2019</p>
+  <p>&copy;Copy right www.EventsHall.com 2018-2019</p>
 </footer>
+
 
 </body>
 </html>
