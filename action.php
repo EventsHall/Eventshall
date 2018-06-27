@@ -15,22 +15,7 @@
 		return $objUser;
 	}
 
-	if(isset($_POST['action']) && ($_POST['action'] == 'register')) {
-		$users = validate_reg_form();
-		$objUser = setUserData($users);
-		$userData = $objUser->getUserByEmail();
-		if($userData['email'] == $users['email'] ){
-			echo "email already registered";
-			exit;
-		}
-
-		
-
-		if($objUser->saveIntoTable()){
-			$lastId = $objUser->conn->lastInsertId();
-			$token = sha1($lastId);
-			$url = 'http://'.$_SERVER['SERVER_NAME'].'/my_project/Eventshall/verify.php?id='.$lastId.'&token='.$token;
-			$html = "<div>Thanks for the registration with localhost. Please click this link to complete your registration<br>".$url."</div>";
+	function sendMailToUserId($objUser,$html){
 
 			
 			require 'phpMailer/PHPMailerAutoload.php';
@@ -63,6 +48,29 @@
 			    echo 'Congratulation your registration done on our site. Please verify your email';
 			}
 		
+
+	}
+
+	if(isset($_POST['action']) && ($_POST['action'] == 'register')) {
+		$users = validate_reg_form();
+		$objUser = setUserData($users);  
+
+		$userData = $objUser->getUserByEmail();
+		if($userData['email'] == $users['email'] ){
+			echo "email already registered";
+			exit;
+		}
+
+		
+
+		if($objUser->saveIntoTable()){
+			$lastId = $objUser->conn->lastInsertId();
+			$token = sha1($lastId);
+			$url = 'http://'.$_SERVER['SERVER_NAME'].'/my_project/Eventshall/verify.php?id='.$lastId.'&token='.$token;
+			$html = "<div>Thanks for the registration with localhost. Please click this link to complete your registration<br>".$url."</div>";
+			
+			sendMailToUserId($objUser,$html);
+
 		}else{
 			echo " data saved unsuccessful";
 		}
