@@ -1,5 +1,4 @@
  $(document).ready(function(){
- 	alert("hiii vikas");
  	$("#signin").validate({//("^[a-zA-Z]+$")
       
       rules:{
@@ -48,10 +47,12 @@
 
           	$('.alert').show();
           	if(data.status == 0){
+              alert("amshu")
           		$('#result').html(data.msg);
 
           	}else{
-          		document.location = 'userDashboard.php';
+              alert('hiiiiii');
+          		document.location = 'dashboard.php';
           	}
           
             
