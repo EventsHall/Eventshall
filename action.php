@@ -47,6 +47,7 @@
 			    echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
 			    echo 'Congratulation your registration done on our site. Please verify your email';
+			    $_SESSION['username'] = $objUser->getName();
 
 			}
 		
