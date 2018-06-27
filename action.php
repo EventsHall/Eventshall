@@ -19,6 +19,7 @@
 		$users = validate_reg_form();
 		$objUser = setUserData($users);
 		$userData = $objUser->getUserByEmail();
+		$_SESSION['username'] = $userData['name'];
 		if($userData['email'] == $users['email'] ){
 			echo "email already registered";
 			exit;
@@ -61,6 +62,7 @@
 			    echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
 			    echo 'Congratulation your registration done on our site. Please verify your email';
+
 			}
 		
 		}else{

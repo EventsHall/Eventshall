@@ -1,14 +1,21 @@
+<?php
+
+  session_start();
+
+
+
+?>
+
 <!DOCTYPE html>
  <html lang="en">
  <head>
-    <title>Welcome Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	  <title>Welcome Page</title>
+ 	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/home.css">
-
     <style type="text/css">
       .modal-body{
       background:#006666;
@@ -27,7 +34,7 @@
 }
 .blink{
     font-size: 40px;
-    color: rgb(0, 137, 226);
+    color: rgb (0, 137, 226);
     
     animation: blink 2s infinite;
    }
@@ -40,10 +47,10 @@
    }
     </style>
    
-    <link rel="stylesheet" type="text/css" href="css/home.css">
+	  <link rel="stylesheet" type="text/css" href="css/home.css">
  </head>
  <body>
-  <div class="navbar navbar-inverse navbar-fixed-top navbar-custom">
+ 	<div class="navbar navbar-inverse  navbar-custom">
       <div class="container">
           <div class="navbar-header" <a href="#" class="pull-left">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -51,7 +58,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>                        
               </button>
-              <a class="pull-left" href="#"><img  src="assets/images/logo.png" alt="Brand" width="100px" height="50px"></a>
+              <a class="pull-left" href="#"><img  src="assets\images\logo.png" alt="Brand" width="100px" height="50px"></a>
               <a class="navbar-brand" href="#">Events Hall</a>
           </div>
 
@@ -63,7 +70,7 @@
                 <li><a href="signUp.html"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>
                 <li><a href="aboutUs.html"><span class="glyphicon glyphicon-book"></span>AboutUs</a></li>
                 <li><a href="contactUs.html"><span class="glyphicon glyphicon-earphone"></span> ContactUs</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome <?php echo $_SESSION['username'] ?></a></li>
               </ul>
           </div>  
       </div>
@@ -101,7 +108,7 @@
   <br>
   <!-- Trigger the modal with a button -->
 <br>
-  <button type="button" class="btn btn-success btn-lg center-block btn-block" data-toggle="modal" data-target="#myModal" style="border-radius: 30px;  !important">Click Here</button>
+  <button type="button" class="btn btn-danger btn-lg center-block" data-toggle="modal" data-target="#myModal" style="border-radius: 20px">Click Here</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -202,7 +209,7 @@
   <br>
   <!-- Trigger the modal with a button -->
   <br>
-  <button type="button" class="btn btn-warning btn-lg center-block btn-block" data-toggle="modal" data-target="#myModal1" style="border-radius: 30px;">Click Here</button>
+  <button type="button" class="btn btn-warning btn-lg center-block" data-toggle="modal" data-target="#myModal1" style="border-radius: 20px;">Click Here</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal1" role="dialog">
@@ -295,7 +302,7 @@
       </div>
       </div>
 
-      <div class="col-sm-4" id="stu1 " style="">
+      <div class="col-sm-4" id="stu1">
 
       <h3 style=" font-size:;text-align:center; background: #1B7C7E; color: white; height:45px;"> Photography Studio Services Form   </h3>
        <a href=""><h4 class="head4" style="text-align: center;">Studio</h4></a>
@@ -304,8 +311,7 @@
   <br>
   <!-- Trigger the modal with a button -->
   <br>
-  <button type="button" class="btn btn-info btn-lg center-block btn-block" data-toggle="modal" data-target="#myModal2" style="border-radius: 30px;">Click Here</button>
-  <br>
+  <button type="button" class="btn btn-info btn-lg center-block" data-toggle="modal" data-target="#myModal2" style="border-radius: 20px;">Click Here</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal2" role="dialog">
@@ -506,13 +512,6 @@
     
    
     </script>
-
-    <br>
-
-<footer class="container-fluid text-center">
-  <p>&copy;Copy right www.EventsHall.com 2018-2019</p>
-</footer>
-
 
  </body>
  </html>

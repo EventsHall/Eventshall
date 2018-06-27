@@ -78,7 +78,7 @@
       $( "#register" ).click(function(event) {
          var form = $( "#signUp" );
          if(form.valid()){
-          event.preventDefault();
+         // event.preventDefault();
           var form_data = $('#signUp').serialize();
           $.ajax({ 
               url:'action.php',
@@ -86,8 +86,7 @@
               data: form_data + '&action=register'
           }).done(function(result){
             $('.alert').show();
-            $('#result').html(result);
-            
+            $('#result').html(result);      
           })
 
         }else{
