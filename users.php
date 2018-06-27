@@ -75,7 +75,39 @@ class Users
 			}
 			return $user;
 		}
+	
+	function getUserById(){
+		$stmt=$this->conn->prepare('SELECT * FROM users WHERE id = :id');
+		$stmt->bindParam(':id',$this->id);
+		try {
+			if($stmt->execute()){
+				$user = $stmt->fetch(PDO::FETCH_ASSOC);
+				}
+			}
+		catch(Exception $e) {
+				echo $e->getMessage();
+			}
+			return $user;
+		}
+
+	function activateUserAccount(){
+		$stmt=$this->conn->prepare('UPDATE users SET activated = 1 WHERE id = :id');
+		$stmt->bindParam(':id',$this->id);
+		try {
+			if($stmt->execute()){
+				return true;
+			}else{
+				return false;
+			}
+			
+		} catch (Exception $e) {
+			echo $e->getMessage();
+			
+		}
+
 	}
+
+}
 
 
 
