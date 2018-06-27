@@ -1,6 +1,10 @@
 <?php
 
   session_start();
+  if(!isset($_SESSION['username'] )){
+    header('location:login.html');
+
+  }
 
 
 
@@ -64,13 +68,10 @@
 
          <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="home.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li><a href="searchpage.html"><span class="glyphicon glyphicon-search"></span> Search</a></li>
-                <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>SignIn</a></li>
-                <li><a href="signUp.html"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>
-                <li><a href="aboutUs.html"><span class="glyphicon glyphicon-book"></span>AboutUs</a></li>
                 <li><a href="contactUs.html"><span class="glyphicon glyphicon-earphone"></span> ContactUs</a></li>
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome <?php echo $_SESSION['username'] ?></a></li>
+                <li><button type="submit" class="btn navbar-btn btn-danger" name="logout" id="logout"  value="Log Out" style="border-radius: 15px;"><a href="logout.php">Sign Out</a></button></li>
               </ul>
           </div>  
       </div>
@@ -83,13 +84,7 @@
 <div class="container-fluid" style="background-color: #1B7C7E; ">
   <div class="row ">
   <div class="col-lg-12">
-      <div class="pull-right">
-        <ul class="nav navbar-nav">
-            <li><button type="submit" class="btn navbar-btn btn-danger" name="logout" id="logout"  value="Log Out" style="border-radius: 15px;">Sign Out</button></li>
-        </ul>     
-</div>
  <h2 class="" style="color:white "  >Registeration Successfully</h2>
- <h3 class="text-uppercase blink "> <b style="color: #001a00">Vinod kumar Verma</b></h3>
  <h3 style="color: #330000">Please  provide Your information related categeory:-</h3>
  </div>
  </div>
