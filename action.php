@@ -15,7 +15,8 @@
 		return $objUser;
 	}
 
-	function sendMailToUserId($objUser,$html){
+
+	function sendMailToUserId($objUser,$html) {
 
 			
 			require 'phpMailer/PHPMailerAutoload.php';
@@ -46,6 +47,7 @@
 			    echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
 			    echo 'Congratulation your registration done on our site. Please verify your email';
+
 			}
 		
 
