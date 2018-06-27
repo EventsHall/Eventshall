@@ -47,11 +47,9 @@
 
           	$('.alert').show();
           	if(data.status == 0){
-              alert("amshu")
           		$('#result').html(data.msg);
 
           	}else{
-              alert('hiiiiii');
           		document.location = 'dashboard.php';
           	}
           

@@ -92,12 +92,19 @@
 		$userData = $objUser->getUserByEmail();
 		if(is_array($userData) && count($userData) > 0){ 
 			if($userData['password'] == $objUser->getPassword()) { 
-				if($rememberMe == 1) {
-					setcookie('email',$objUser->getEmail());
-					setcookie('password',base64_encode($users['password']));
+				if($userData['activated'] == 1){
+					if($rememberMe == 1) {
+						setcookie('email',$objUser->getEmail());
+						setcookie('password',base64_encode($users['password']));
+
+					}
+					echo json_encode(["status" => 1, "msg" => "Login Successfull"]);
+
+				}else{
+					echo json_encode(["status" => 0, "msg" => "Your Account is not active, Please activated your account to login"]);
 
 				}
-				echo json_encode(["status" => 0, "msg" => "Login Successfull"]);
+				
 
 			}else{
 				echo json_encode(["status" => 0, "msg" => "E-mail or password is wrong"]);
