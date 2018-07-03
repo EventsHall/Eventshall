@@ -78,7 +78,7 @@
       $( "#register" ).click(function(event) {
          var form = $( "#signUp" );
          if(form.valid()){
-         // event.preventDefault();
+          event.preventDefault();
           var form_data = $('#signUp').serialize();
           $.ajax({ 
               url:'action.php',
