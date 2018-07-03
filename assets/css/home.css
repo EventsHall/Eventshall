@@ -12,18 +12,19 @@ body{background-color:lightgray;}
     color: white;
 }
 
-    
     /* Add a gray background color and some padding to the footer */
   footer {
       background-color: #1B7C7E;
       padding: 25px;
     }
-    
-.carousel-inner img {
+   
+    .carousel-inner img {
       width: 100%; /* Set width to 100% */
-      margin:50px;
-      min-height:200px;
+      margin:auto;
+    min-height:200px;
   }
+    
+
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 500px) {
@@ -44,7 +45,7 @@ body{background-color:lightgray;}
   background-color: pink;
 
 }
-.blink{
+/*.blink{
     font-size: 40px;
     color: rgb(0, 137, 226);
     

@@ -4,13 +4,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
   <link rel="stylesheet" type="text/css" href="assets/css/home.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/userfinalpage2_style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/updatepage_style.css">
 
-</head>
 <body>
-<h2 class="blink" id="top_heading" style=";">Gallary Picture</h2>  
+<h2 class="blink" id="top_heading" style="">Gallary Picture</h2>  
 </div><br><br>
 <div class="container" >
   <div class="mySlides">
@@ -110,62 +108,83 @@
 </div>
 <br>
 <div class="col-sm-4 col-md-8 col-lg-12">
-<h1 id ="mid_heading"> Related Information below:-</h1>
+<h1 id="mid_heading"> Related Information below:-</h1>
 </div>
 <br>
 <br>
-    <div class="container" id="table">
-         <div class="row">
-             <div class="col-lg-12 ">
+<div class="container" id="table">
+  <div class="row">
+    <div class="col-lg-12 ">
   
-              <table class="table table-responsive"  >
-                  <tr>
-                        <th>Name:</th><td>Dev Palace</td>
-                  </tr>
-                  <tr>
-                       <th>Owner or Manager Name:</th><td>Vinod Kumar Verma</td>
-                  </tr>
-                  <tr>
-                       <th>Address:</th>
-                       <td>228 EWS Gunjan Vihar Karrahi</td>
-                 </tr>
-                  <tr>
-                       <th>Pincode:</th><td>208027</td>
-                  </tr>
-                  <tr>
-                       <th>City Or District:</th><td>Kanpur</td>
-                  </tr>
-                  <tr>
-                       <th>State :</th><td>Uttar Pradesh</td>
-                  </tr>
-                  <tr>
-                        <th>Contact Number:</th><td>8090587674</td>
-                  </tr>
-                  <tr>
-                        <th>Website:</th><td><a id="url_link" href="#">www.landmarkhotel.com</a></td>
-                  </tr>
-                  <tr>
-                        <th>Email Id:</th><td>vinodverma150791@gmail.com</td>
-                   </tr>
-                   <tr>
-                         <th>Faciality & Services:</th><td>We are providin good services like best AC Non Ac hall. Dj sound Service, good staff and big parking.</td>
-                  </tr>
+  <table class="table table-responsive"  >
+    <tr>
+      <th>Name:</th>
+      <td><p>Dev Palace</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger "style=" ">Ok</button></td></td>
+    </tr>
+    <tr>
+      <th>Owner or Manager Name:</th>
+      <td><p>Vinod Kumar Verma</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
+    </tr>
+    <tr>
+      <th>Address:</th>
+      <td><p>228 EWS Gunjan Vihar Karrahi</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
+    </tr>
+    <tr>
+      <th>Pincode:</th>
+      <td><p>208027</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
+    </tr>
+    <tr>
+      <th>City Or District:</th>
+      <p><td>Kanpur</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger "">Ok</button></td></td>
+    </tr>
+    <tr>
+      <th>State :</th>
+      <td><p>Uttar Pradesh</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+    </tr>
+    <tr>
+      <th>Contact Number:</th>
+      <p><td>8090587674</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+    </tr>
+    <tr>
+      <th>Website:</th>
+      <td><p><a id="url_website" href="#">www.landmarkhotel.com</a></p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger">Ok</button></td></td>
+    </tr>
+    <tr>
+      <th>Email Id:</th>
+      <td><p>vinodverma150791@gmail.com</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+    </tr>
+    <tr>
+      <th>Faciality & Services:</th>
+      <td><p style="text-align: justify-all;">We are providin good services like best AC Non Ac hall. Dj sound Service, good staff and big parking.</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+    </tr>
+    <tr>
+      <th>Change Password:</th>
+      <td><p style="">123456789</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+    </tr>
+    <tr>
+      <th>Confirm Password:</th>
+      <td><p style="">123456789</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+    </tr>
+    <tr>
+  </table>
 
-              </table>
-
-            </div>
-          </div>
+</div>
+</div>
   
-    </div>
+</div>
 
+<script>
 
+</script>
     <br>
     <br>
     <footer class="container-fluid text-center">
   <p>&copy;All Copy right www.EventsHall.com 2018-2019</p>
   <div class="col-lg-12">
-  <button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-off"> SignOut</button>
-  <button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-pencil"> Update</button>
+  <button  class="btn btn-danger btn-md glyphicon glyphicon-off"> SignOut</button>
+  <button  class="btn btn-danger btn-md glyphicon glyphicon-pencil " > Update</button>
+  <button id ="submit"class="btn btn-md btn-danger">Submit</button></tr>
+    
 </footer>
 <script src="assets/js/userfinalpage.js" type="text/javascript"></script>
 </body>
