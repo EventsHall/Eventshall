@@ -1,4 +1,20 @@
  $(document).ready(function(){
+
+  alert("hiiiiiiiiiiiii");
+
+   $.ajax({ 
+        url:'action.php',
+        method: 'post',
+        data:'action=checkCookies'
+   }).done(function(result){
+        //console.log(result);
+        var data = JSON.parse(result); 
+        //console.log(data);
+        $('#email').val(data.email);
+        $('#password').val(data.password);      
+      })
+
+
  	$("#signin").validate({//("^[a-zA-Z]+$")
       
       rules:{
@@ -44,6 +60,7 @@
               data: form_data + '&action=login'
           }).done(function(result){
           	var data = JSON.parse(result);  
+            console.log(data);
 
           	$('.alert').show();
           	if(data.status == 0){
