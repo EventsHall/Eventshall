@@ -1,6 +1,19 @@
 <?php 
 	session_start();
 
+	if(isset($_POST['action']) && ($_POST['action'] == 'checkCookies')) {
+		echo $_POST['action'];
+		echo "hiiiiiiiiiiiiiiiiiiii";
+		if (isset($_COOKIE['email'], $_COOKIE['password'])){
+			$data = ['email'=>$_COOKIE['email'],'password'=>base64_decode($_COOKIE['password'])];
+			echo json_encode($data);
+			# code...
+		}
+
+
+
+	}
+
 	function setUserData($users){
 		require 'users.php';
 		
@@ -54,6 +67,8 @@
 
 	}
 
+	
+
 	if(isset($_POST['action']) && ($_POST['action'] == 'register')) {
 		$users = validate_reg_form();
 		$objUser = setUserData($users);  
@@ -98,6 +113,7 @@
 						setcookie('password',base64_encode($users['password']));
 
 					}
+					$_SESSION['username'] = $userData['name'];
 					echo json_encode(["status" => 1, "msg" => "Login Successfull"]);
 
 				}else{
