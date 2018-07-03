@@ -1,6 +1,9 @@
 <?php
 
   session_start();
+  if(!isset($_SESSION['username'])){
+    header('location:login.html');
+  }
 
 
 
@@ -48,8 +51,6 @@
     100%{opacity: 0;}
    }
     </style>
-   
-	  <link rel="stylesheet" type="text/css" href="css/home.css">
  </head>
  <body>
  	<div class="navbar navbar-inverse  navbar-custom">
