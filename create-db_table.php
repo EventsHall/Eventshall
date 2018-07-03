@@ -28,7 +28,7 @@
 		id INT(6) PRIMARY KEY AUTO_INCREMENT NOT NULL, 
 		name VARCHAR(50) NOT NULL,
 		mobile BIGINT(10) NOT NULL,
-		email VARCHAR(50) NOT NULL,
+		email VARCHAR(50) UNIQUE KEY NOT NULL,
 		password VARCHAR(50) NOT NULL,
 		activated TINYINT(2) default 0 NOT NULL,
 		token VARCHAR(100) NULL,
@@ -37,6 +37,25 @@
 
 	if (mysqli_query($conn, $table)) {
 		echo "Table users created successfully";
+	} else {
+		echo "Error creating table: " . mysqli_error($conn);
+	}
+
+	$table = "CREATE TABLE guest_house (
+		id INT(6) PRIMARY KEY AUTO_INCREMENT NOT NULL, 
+		name VARCHAR(250) NOT NULL,
+		address VARCHAR(250) NOT NULL,
+		pincode BIGINT(6) NOT NULL,
+		city VARCHAR(50) NOT NULL,
+		distric VARCHAR(50) NOT NULL,
+		info VARCHAR(250) NOT NULL,
+		image BLOB NOT NULL,
+		email VARCHAR(50) NOT NULL,
+		FOREIGN KEY(email) REFERENCES users(email)
+		
+	)";
+	if (mysqli_query($conn, $table)) {
+		echo "Table guest_house created successfully";
 	} else {
 		echo "Error creating table: " . mysqli_error($conn);
 	}
