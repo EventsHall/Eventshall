@@ -31,8 +31,10 @@
         border: solid green;
       }
       .error{
+      	
         color:#4d0026;
       }
+      
 
   .alert{
   display: none;
@@ -69,7 +71,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="searchpage.html"><span class="glyphicon glyphicon-search"></span> Search</a></li>
                 <li><a href="contactUs.html"><span class="glyphicon glyphicon-earphone"></span> ContactUs</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome <?php echo $_SESSION['username'] ?></a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome</a></li>
                 <li><button type="submit" class="btn navbar-btn btn-danger" name="logout" id="logout"  value="Log Out" style="border-radius: 15px;"><a href="logout.php">Sign Out</a></button></li>
               </ul>
           </div>  
@@ -92,7 +94,8 @@
  <div class="container-fluid" id="form2">
   <div class="row">
     <br>
-    <div class="col-sm-4" id="guest1">
+    <div class="col-sm-4  id="guest1" style="">
+    	
 <h3 style="font-size: 20px; background: #1B7C7E; color: white"> Party Lawn,Palace, Hotel, Guest House, Banquet Hall Name Form   </h3>
   
   <a href=""><h4 class="head4 text-center">Hotel Place Party-Lawn</h4></a>
@@ -102,7 +105,7 @@
   <br>
   <!-- Trigger the modal with a button -->
 <br>
-  <button type="button" class="btn btn-danger btn-lg center-block" data-toggle="modal" data-target="#myModal" style="border-radius: 20px">Click Here</button>
+  <button type="button" class="btn btn-danger btn-lg center-block btn-block" data-toggle="modal" data-target="#myModal" style="border-radius: 30px">Click Here</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
@@ -123,6 +126,10 @@
   <div class="form-group">
     <label for="address">Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Address:</label>
            <input type="text" class="form-control" id="address" placeholder="Address" name="address1">
+         </div>
+         <div class="form-group">
+    <label for="address">Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Area:</label>
+           <input type="text" class="form-control" id="area" placeholder="Area" name="area1">
          </div>
          <div class="form-group">
            
@@ -174,12 +181,14 @@
     
   </select>
 </div><div class="form-group">
-           <label for="Description">Facility Or Services Providing Detail:</label>
-           <textarea class="form-control" rows="3" id="comment" placeholder="What kind services you provide in any events. Write Here...." name="comment1"></textarea>
+	<label for="website">Enter your website if You have any </label>
+           <input type="text" class="form-control" id="website" name="website" placeholder="http://www.xyz.com">
+           
       </div>
       <div class="form-group">
-           <label for="uploadpic">Upload Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Picture </label>
-           <input type="file" class="form-control" id="uploadpic" name="upload1" >
+      	<label for="Description">Facility Or Services Providing Detail:</label>
+           <textarea class="form-control" rows="3" id="comment" placeholder="What kind services you provide in any events. Write Here...." name="comment1"></textarea>
+           
            <br>
            <button type="button" class="btn btn-success btn-lg btn-block" id="registe_guesthouse" style="">Submit
                   </button>
@@ -192,6 +201,7 @@
                       
         </div>
       </div>
+  
       </div>
       <div class="col-sm-4"id="cat1">
       
@@ -203,7 +213,7 @@
   <br>
   <!-- Trigger the modal with a button -->
   <br>
-  <button type="button" class="btn btn-warning btn-lg center-block" data-toggle="modal" data-target="#myModal1" style="border-radius: 20px;">Click Here</button>
+  <button type="button" class="btn btn-warning btn-lg center-block btn-block" data-toggle="modal" data-target="#myModal1" style="border-radius: 30px;">Click Here</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal1" role="dialog">
@@ -221,10 +231,16 @@
     <label for="catering_name">Catering Services Company Name:</label>
            <input type="text" class="form-control" id="catering_name" placeholder="Enter Name Here..." name="catering_name">
   </div>
+
   <div class="form-group">
     <label for="address2">Catering Services Company Address:</label>
            <input type="text" class="form-control" id="address2" placeholder="Address" name="address2">
          </div>
+         <div class="form-group">
+    <label for="area2">Catering Services Company Area:</label>
+           <input type="text" class="form-control" id="area2" placeholder="Area" name="area2">
+         </div>
+
          <div class="form-group">
            
              <label for="Pincode2" ">Pincode:</label>
@@ -232,7 +248,7 @@
          </div>
           <div class="form-group">
               <label for="city2" ">City District Name:</label>
-             <input id="city2" class="form-control " type="text" name="city2"  placeholder="City Or District Name">
+             <input id="city2" class="form-control " type="text" name="city3"  placeholder="City Or District Name">
            </div>
            <div class="form-group">
   <label for="sel1">Select State:</label>
@@ -305,7 +321,7 @@
   <br>
   <!-- Trigger the modal with a button -->
   <br>
-  <button type="button" class="btn btn-info btn-lg center-block" data-toggle="modal" data-target="#myModal2" style="border-radius: 20px;">Click Here</button>
+  <button type="button" class="btn btn-info btn-lg center-block btn-block" data-toggle="modal" data-target="#myModal2" style="border-radius: 30px;">Click Here</button>
 
   <!-- Modal -->
   <div class="modal fade" id="myModal2" role="dialog">
@@ -326,6 +342,10 @@
   <div class="form-group">
     <label for="address3">Photography Studio Address:</label>
            <input type="text" class="form-control" id="address3" placeholder="Address" name="address3">
+         </div>
+         <div class="form-group">
+    <label for="address3">Photography Studio Area:</label>
+           <input type="text" class="form-control" id="address3" placeholder="Area" name="area3">
          </div>
          <div class="form-group">
            
@@ -398,10 +418,13 @@
         </div>
         </div>
       </div>
-      </div>
 
 
     </div>
+    <br><br>
+    <footer class="container-fluid text-center">
+  <p>&copy;Copy right www.EventsHall.com 2018-2019</p>
+</footer>
  
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
@@ -426,6 +449,11 @@
         address1:{
           required:true,
           minlength:5
+      },
+          area1:{
+          required:true,
+          minlength:5,
+          alpha:true
         },
         city1:{
           required:true,
@@ -437,9 +465,12 @@
             minlength:6,
             maxlength:6
         },
-        '.comment1':{
+        website:{
+        	required:false,
+        	url:true
+        },
+        comment1:{
           required:true,
-          lettersonly:true,
           minlength:10
         },
         
@@ -456,6 +487,11 @@
           minlength:"Please Enter five characters minimum"
 
         },
+        area1:{
+          required:"Area is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
         city1:{
           required:"City or District is required.... Please fill it",
           minlength:"Please Enter five characters minimum"
@@ -469,12 +505,157 @@
           maxlength:"Enter maximum only 6 numbers digit"
         },
         
-
+ 
        
  
 
       }
     });
+
+
+
+    $("#catering_form").validate({//("^[a-zA-Z]+$")
+      
+      rules:{
+        catering_name:{
+          required: true,
+          alpha:true,
+          minlength:5
+        },
+        address2:{
+          required:true,
+          minlength:5
+      },
+          area2:{
+          required:true,
+          minlength:5,
+          alpha:true
+        },
+        city2:{
+          required:true,
+          alpha:true,
+        },
+        pincode2:{
+          required: true,
+          number:true,
+            minlength:6,
+            maxlength:6
+        },
+        
+        comment2:{
+          required:true,
+          minlength:10
+        },
+        
+      },
+      messages:{
+        catering_name:{
+          required:"Name is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
+
+        address2:{
+          required:"Address is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
+        area2:{
+          required:"Area is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
+        city2:{
+          required:"City or District is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
+        
+        pincode2:{
+          required:"Please Enter your Pincode or Postal number",
+          number:"Enter only numbers 123456",
+          minlength:" Enter minimum 6 numbers digit",
+          maxlength:"Enter maximum only 6 numbers digit"
+        },
+        
+ 
+       
+ 
+
+      }
+    });
+
+    $("#studio_form").validate({//("^[a-zA-Z]+$")
+      
+      rules:{
+        studio_name:{
+          required: true,
+          alpha:true,
+          minlength:5
+        },
+        address3:{
+          required:true,
+          minlength:5
+      },
+          area3:{
+          required:true,
+          minlength:5,
+          alpha:true
+        },
+        city3:{
+          required:true,
+          alpha:true,
+        },
+        pincode3:{
+          required: true,
+          number:true,
+            minlength:6,
+            maxlength:6
+        },
+        
+        comment3:{
+          required:true,
+          minlength:10
+        },
+        
+      },
+      messages:{
+        studio_name:{
+          required:"Name is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
+
+        address3:{
+          required:"Address is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
+        area3:{
+          required:"Area is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
+        city3:{
+          required:"City or District is required.... Please fill it",
+          minlength:"Please Enter five characters minimum"
+
+        },
+        
+        pincode3:{
+          required:"Please Enter your Pincode or Postal number",
+          number:"Enter only numbers 123456",
+          minlength:" Enter minimum 6 numbers digit",
+          maxlength:"Enter maximum only 6 numbers digit"
+        },
+        
+ 
+       
+ 
+
+      }
+    });
+
 
    
     jQuery.validator.setDefaults({
@@ -488,7 +669,7 @@
          if(form.valid()){
           var form_data = $('guesthouse_form').serialize();
           $.ajax({ 
-              url:'action.php',
+              url:'uploadpic.php',
               method: 'post',
               data: form_data + '&action=register'
           }).done(function(result){

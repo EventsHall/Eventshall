@@ -1,7 +1,7 @@
-body{background-color: white;}
+body{background-color: lightgray;}
 	    form{
 	      background:#006666;
-	      padding:40px; 
+	      padding:30px; 
 	      -webkit-box-shadow:9px 15px 39px 9px rgba(0,0,0,0.75);
 	       -moz-box-shadow:9px 15px 39px 9px rgba(0,0,0,0.75);
 	       -box-shadow:9px 15px 39px 9px rgba(0,0,0,0.75);

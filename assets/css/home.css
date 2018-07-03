@@ -1,4 +1,4 @@
-body{background-color:white;}
+body{background-color:lightgray;}
  .navbar {
       margin-bottom: 0;
       border-radius: 0;
@@ -21,7 +21,7 @@ body{background-color:white;}
     
 .carousel-inner img {
       width: 100%; /* Set width to 100% */
-      margin: auto;
+      margin:50px;
       min-height:200px;
   }
 
@@ -44,3 +44,25 @@ body{background-color:white;}
   background-color: pink;
 
 }
+.blink{
+    font-size: 40px;
+    color: rgb(0, 137, 226);
+    
+    animation: blink 2s infinite;
+   }
+   
+  @keyframes .blink {
+    from {
+        color:green;
+    }
+    to {
+        color:white;
+    }
+}
+   
+   @keyframes blink{
+    0%{opacity: 1;}
+    75%{opacity: 1;}
+    76%{ opacity: 0;}
+    100%{opacity: 0;}
+   }
