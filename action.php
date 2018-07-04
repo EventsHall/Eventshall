@@ -1,6 +1,19 @@
 <?php 
 	session_start();
 
+	if(isset($_POST['action']) && ($_POST['action'] == 'checkCookies')) {
+		echo $_POST['action'];
+		echo "hiiiiiiiiiiiiiiiiiiii";
+		if (isset($_COOKIE['email'], $_COOKIE['password'])){
+			$data = ['email'=>$_COOKIE['email'],'password'=>base64_decode($_COOKIE['password'])];
+			echo json_encode($data);
+			# code...
+		}
+
+
+
+	}
+
 	function setUserData($users){
 		require 'users.php';
 		
@@ -47,12 +60,14 @@
 			    echo 'Mailer Error: ' . $mail->ErrorInfo;
 			} else {
 			    echo 'Congratulation your registration done on our site. Please verify your email';
-			    $_SESSION['username'] = $objUser->getName();
+			    //$_SESSION['username'] = $objUser->getName();
 
 			}
 		
 
 	}
+
+	
 
 	if(isset($_POST['action']) && ($_POST['action'] == 'register')) {
 		$users = validate_reg_form();
@@ -98,6 +113,7 @@
 						setcookie('password',base64_encode($users['password']));
 
 					}
+					$_SESSION['username'] = $userData['name'];
 					echo json_encode(["status" => 1, "msg" => "Login Successfull"]);
 
 				}else{

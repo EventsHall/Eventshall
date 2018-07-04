@@ -1,10 +1,11 @@
 <?php
 
- // session_start();
-  //if(!isset($_SESSION['username'] )){
-  //  header('location:login.html');
+  session_start();
+  if(!isset($_SESSION['username'])){
+    header('location:login.html');
+  }
 
- // }
+
 
 
 
@@ -23,9 +24,12 @@
     <style type="text/css">
      
     </style>
+<<<<<<< HEAD
    
 	  <link rel="stylesheet" type="text/css" href="assets/css/userpage1_style.css">
 
+=======
+>>>>>>> d99b653b98ad6e5d37e2e5579f24c919c6925032
  </head>
  <body>
  	<div class="navbar navbar-inverse  navbar-custom">
