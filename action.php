@@ -3,7 +3,6 @@
 
 	if(isset($_POST['action']) && ($_POST['action'] == 'checkCookies')) {
 		echo $_POST['action'];
-		echo "hiiiiiiiiiiiiiiiiiiii";
 		if (isset($_COOKIE['email'], $_COOKIE['password'])){
 			$data = ['email'=>$_COOKIE['email'],'password'=>base64_decode($_COOKIE['password'])];
 			echo json_encode($data);
@@ -185,6 +184,12 @@
 		}
 
 		return $users;
+	}
+
+	if(isset($_POST['action']) && ($_POST['action'] == 'register_guesthouse')) {
+
+		echo 'hiii';
+
 	}
 
 
