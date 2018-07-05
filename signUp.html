@@ -11,6 +11,7 @@
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       
 	  <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.js"></script>
 	  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
@@ -64,42 +65,53 @@
   			<form id="signUp" name="signup_form" action=""  method="post">
          <h2 class="text-center">Registration Here</h2>
       <!-- Start User Name Input Tag  -->
-      <div class="form-group">
+      <div class="form-group" id="username">
            <label for="username">Enter Your Name:</label>
+           <div class="WithIcon">
            <input type="text" class="form-control" id="username" placeholder="Enter Your Name" name="username" class="alphaonly">
+           <i class="fa fa-user fa-lg-fw" aria-hidden="true"></i>
+           </div>
       </div>
       <!-- End User Name Input Tag  -->
 
       <!-- Start Mobile Number Input Tag -->
       <div class="form-group">
            <label for="mobile_number">Mobile No:</label>
+           <div class="WithIconMobile">
            <input type="number" class="form-control" id="mobile_number" maxlength="10"  placeholder="Mobile or Contact" name="mobile_number" maxlength="10">
-          
+            <i class="fa fa-phone " aria-hidden="true"></i>
+          </div>
       </div>
       <!-- End Mobile Number Input Tag -->
 
       <!-- Start Email Input Tag -->
       <div class="form-group">
            <label for="email">Email Id:</label>
+           <div class="WithIconEmail">
            <input type="email"  class="form-control" id="email" placeholder="Email Id" name="email" >
+           <i class="fa fa-envelope " aria-hidden="true"></i>
+         </div>
       </div>
       <!-- End Email Input Tag -->
 
        <!-- Start Password Input Tag -->
       <div class="form-group">
            <label for="password">Password:</label>
+           <div class="WithIconPassword">
            <input type="password" class="form-control" id="password" placeholder="Enter your Password" name="password" >
-           
+           <i class="fa fa-lock " aria-hidden="true"></i>
+           </div>
      </div>
      <!-- End Password Input Tag -->
 
      <!-- Start Confirm Password Input Tag -->
      <div class="form-group">
-
      	
            <label for="confirm_password"> Confirm Password:</label>
+           <div class="WithIconPassword">
            <input type="password" class="form-control" id="confirm_password" placeholder="Re-type Password" name="confirm_password" >
-            <p id="cpassword_check"></p>
+            <i class="fa fa-lock " aria-hidden="true"></i>
+          </div>
      </div>
      <!-- End Confirm Password Input Tag -->
 

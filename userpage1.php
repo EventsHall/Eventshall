@@ -21,15 +21,8 @@
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/home.css">
-    <style type="text/css">
-     
-    </style>
-<<<<<<< HEAD
-   
 	  <link rel="stylesheet" type="text/css" href="assets/css/userpage1_style.css">
 
-=======
->>>>>>> d99b653b98ad6e5d37e2e5579f24c919c6925032
  </head>
  <body>
  	<div class="navbar navbar-inverse  navbar-custom">
