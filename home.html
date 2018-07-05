@@ -8,6 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/hompagestyle.css">
 </head>
 
 <body>
@@ -45,17 +46,14 @@
 
   <!-- image slider section-->
 
-  	
+  	 
+    <div>
+      <marquee direction="right" behavior="alternate">  
+      		<h1  class="blink" id=" top_heading">Welcome to Events Hall</h1>
+      </marquee>
+     </div>
   
   <div class="container">
-  	<div class="row">
-  		<div class="col-lg-12 ">
-  	<div style="background:;">
-  		<marquee direction="right" behavior="alternate">	<h1 class="blink"style="font-family: Times New Roman;text-align: center; color:black; text-shadow:1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;">Welcome Events Hall</h1></marquee>
-  		</div>
-  		</div>
-  	</div>
-  	
      <div id="myCarousel" class="carousel slide" data-ride="carousel" >
       <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -96,82 +94,95 @@
         </a>
     </div>
     
-  </div><hr>
+  </div><br>
     <!--  close image slider section-->
 
 
   
-<div class="container-fluid">
-	<div class="paragraph text-justify" style="background-color: ">
+<div class="container-fluid" id="paragraphstyle">
+	<div class="paragraph text-justify">
 
-   <p>We are providing free information with related service in any kind of events. We are giving free information like Party Lawn,Marriage hall, Banquet hall Palace,Hotel. Our website provide free three types common services details like nearest Catering services, nearest Party Lawn, Hotels, Marriage Hall, Guest House and Dharam Shala, nearest Photo graphy Studio for related to every kind of events like weddings party, birthday party, office party, etc.</p>
+    	<h1 id ="relatedinformation">Related information</h1>
 
-<p>We are provide details the client who using our website which home coming a events like wedding party, marriage reception party, bitrthday party office party, retirement party.......... We are provide information free details for three common services like Catering services, Party Lawn, Hotels, Marriage Hall, Guest House and Dharam Shala, and Photo graphy Studio giving your nearest area in your city.
-</p>
-</div>
-    </div>
+   			<p id="content">We are providing free information with related service in any kind of events. We are giving free information like Party Lawn,Marriage hall, Banquet hall Palace,Hotel. Our website provide free three types common services details like nearest Catering services, nearest Party Lawn, Hotels, Marriage Hall, Guest House and Dharam Shala, nearest Photo graphy Studio for related to every kind of events like weddings party, birthday party, office party, etc.</p>
+
+			<p id="content" >We are provide details the client who using our website which home coming a events like wedding party, marriage reception party, bitrthday party office party, retirement party.......... We are provide information free details for three common services like Catering services, Party Lawn, Hotels, Marriage Hall, Guest House and Dharam Shala, and Photo graphy Studio giving your nearest area in your city. There is form for the user for free registration in related service categeory. They Provide easily its information using registration form and it is free. They update his details and make user profile easily.
+			</p>
+	</div>
+</div><br>
+
 <div class="container">
     <div class="row"> 
-    	<h1  style="text-align: center; color: #1B7C7E">Service Categeory</h1><br>
-    	<div class=""></div>
 
+    	<h1 id ="serviceheading">Service Categeory</h1><br>
 
-        <div class="col-sm-3  text-justify" style="background-color:#1B7C7E ">
-        	<div style="width:100%; ;  ">
-            <h2 class="blink" style="text-align: center;background-color:#1B7C7E; color:white;font-size: 29px">Catering</h2>
+        <div class="col-sm-3  text-justify" style="background-color:#1B7C7E " >
+        	<div id="column_area">
+        	
+              <h2 id="section_heading" class="blink">Catering</h2>
             <center>
-            <img src="assets/images/catering.jpg" class="img-responsive" style="" alt="Image">
-            </center>
-            <br>
-            <p id="paragraph" style="color:white; font-family: Times New Roman;
-            text-align; padding: 10px;">We are providing catering service information  any kinds of events  in your nearest area and city. if you want to search catering service then click below button.  You dont need to create any account for getting information.</p>
-            <p style="color:white; font-family: Times New Roman;padding: 10px">Note: if You want to include catering service information then  <b><a href="signUp.html" style="color: white" target="">click SignUp</b></a> menu and provide information its free for registration no charges apply </p>
-            
-            <button class="btn btn-danger btn-lg center-block" style="border-radius: 40px;"><a href="searchpage.html"style="text-decoration: none; color: white ">Search</a></button>
-            <br><br>
+            <img src="assets/images/catering.jpg" class="img-responsive"  alt="Image">
+            </center><br>
+           
+            <p id="column_para1">
+       			 We are providing catering service information  any kinds of events  in your nearest area and city. if you want to search catering service then click below button.  You dont need to create any account for getting information.
+       		</p>
 
+            <p  id="column_para2">Note: if You want to include catering service information then <b><a id="signup_link" href="signUp.html">click SignUp</b></a> menu and provide information its free for registration no charges apply 
+            </p><br>
+            
+            <button class="btn btn-danger btn-lg center-block">
+            <a href="searchpage.html" id="search_link"style="">Search</a>
+        	</button>
+            <br><br>
             </div>
         </div>
+
+
         <div class="col-sm-1"></div>
 
-
         <div class="col-sm-3  text-justify" style="background-color:#1B7C7E ">
-        	<div style="width:100%; ;  ">
-            <h2 class="blink" style="text-align: center;background-color:#1B7C7E; color:white;font-size: 29px">Events Place</h2>
+        	<div id="column_area">
+            <h2 class="blink"id="section_heading">Events Place</h2>
             <center>
             <img id="guesthouse" src="assets/images/guest.jpg" class="img-responsive" style="" alt="Image">
            
             </center>
             <br>
-            <p id="paragraph" style="color:white; font-family: Times New Roman;
-            text-align; padding: 10px;">We are providing Party Lawn, Hotels, Marriage Hall, Guest House and Dharam shala service information  any kinds of events  in your nearest area and city. if you want to search catering service then click below button.  You dont need to create any account for getting information.</p>
-            <p style="color:white; font-family: Times New Roman;padding: 10px">Note: if You want to include events place  information then  <b><a href="signUp.html" style="color: white" target="">click SignUp</b></a> menu and provide information its free for registration no charges apply </p>
+            <p id="column_para1">
+            	We are providing Party Lawn, Hotels, Marriage Hall, Guest House and Dharam shala service information  any kinds of events  in your nearest area and city. if you want to search catering service then click below button.  You dont need to create any account for getting information.
+            </p>
+            <p id="column_para1" >Note: if You want to include events place  information then  <b><a href="signUp.html" id="signup_link">click SignUp</b></a> menu and provide information its free for registration no charges apply. 
+            </p>
             
-            <button class="btn btn-danger btn-lg center-block" style="border-radius: 40px;"><a href="searchpage.html"style="text-decoration: none; color: white ">Search</a></button>
-            <br>
+            <button class="btn btn-danger btn-lg center-block">
+            <a href="searchpage.html" id="search_link">Search</a>
+        	</button>
+            <br><br>
 
             </div>
         </div>
 
-       
-
         <div class="col-sm-1"></div>
 
-
         <div class="col-sm-3  text-justify" style="background-color:#1B7C7E ">
-        	<div style="width:100%; ;  ">
-            <h2 class="blink" style="text-align: center;background-color:#1B7C7E; color:white;font-size: 29px">Photography Studio</h2>
+        	<div id="column_area">
+            <h2 class="blink" id ="section_heading">Photography Studio</h2>
             <center>
             <img src="assets/images/studio.jpg" class="img-responsive" style="" alt="Image">
             </center>
             <br>
-            <p id="paragraph" style="color:white; font-family: Times New Roman;
-            text-align; padding: 10px;">We are providing Photography studio service information  any kinds of events  in your nearest area and city. if you want to search Photography studio service then click below button.  You dont need to create any account for getting information.</p>
+            <p id="column_para1">
+            We are providing Photography studio service information  any kinds of events  in your nearest area and city. if you want to search Photography studio service then click below button.  You dont need to create any account for getting information.
+        	</p>
 
-            <p style="color:white; font-family: Times New Roman;padding: 10px">Note: if You want to include Photography studio  information then  <b><a href="signUp.html" style="color: white" target="">click SignUp</b></a> menu and provide information its free for registration no charges apply.</p>
+            <p id="column_para2">Note: if You want to include Photography studio  information then  <b><a href="signUp.html" id="signup_link">click SignUp</b></a> menu and provide information its free for registration no charges apply.
+            </p><br>
 
             
-            <button class="btn btn-danger btn-lg center-block" style="border-radius: 40px;"><a href="searchpage.html"style="text-decoration: none; color: white; px ">Search</a></button>
+            <button class="btn btn-danger btn-lg center-block">
+            <a href="searchpage.html" id="search_link">Search</a>
+        	</button>
             <br><br>
 
             </div>
@@ -183,21 +194,6 @@
 <footer class="container-fluid text-center">
   <p>&copy;Copy right www.EventsHall.com 2018-2019</p>
 </footer>
-<script type="text/javascript">
-	
-		$("#guesthouse ").hover(
-    function () {
-         $(this).attr("src","assets/images/studio.jpg","src",);
-         
-
-    }, 	
-
-    function () {
-        $(this).attr("src","assets/images/guest.jpg");
-    }
-);
-
-</script>
 
 </body>
 </html>
