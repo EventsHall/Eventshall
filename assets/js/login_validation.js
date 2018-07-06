@@ -1,7 +1,5 @@
  $(document).ready(function(){
 
-  alert("hiiiiiiiiiiiii");
-
    $.ajax({ 
         url:'action.php',
         method: 'post',
@@ -67,7 +65,7 @@
           		$('#result').html(data.msg);
 
           	}else{
-          		document.location = 'dashboard.php';
+          		document.location = 'userpage1.php';
           	}
           
             
