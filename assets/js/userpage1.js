@@ -229,20 +229,28 @@
         debug: true,
         success: "valid"
       });
-    });
-      
- /*   $( "#guesthouse_register" ).click(function(event) {
+    
+
+
+
+   $( "#register_guesthouse" ).click(function(event) {
          var form = $( "#guesthouse_form" );
          if(form.valid()){
-          var form_data = $('guesthouse_form').serialize();
+          event.preventDefault();
+          var form_data = $('#guesthouse_form').serialize();
           $.ajax({ 
-              url:'uploadpic.php',
+              url:'action.php',
               method: 'post',
-              data: form_data + '&action=register'
+              data: form_data + '&action=register_guesthouse'
           }).done(function(result){
-            $('.alert').show();
-            $('#result').html(result);
-            
+              var data = JSON.parse(result);  
+               $('.alert').show();
+              if(data.status == 0){
+              $('#result').html(data.msg);
+
+              }else{
+                document.location = 'userpage2.php';
+              }
           })
 
         }else{
@@ -250,4 +258,8 @@
           $('#result').html("form not validate please validate first");
         }
 
-      });*/
+
+      });
+
+    });
+
