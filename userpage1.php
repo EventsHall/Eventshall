@@ -84,7 +84,7 @@
                 <div class="modal-content " >
                      <div class="modal-header">
                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 id="modal_top_heading" class="modal-title" style=""><b>Hall For Events Services</b> </h4>
+                            <h4 id="modal_top_heading" class="modal-title" ><b>Hall For Events Services</b> </h4>
                       </div>
 
                 <div class="modal-body">
@@ -191,205 +191,212 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 id="modal_top_heading" class="modal-title"><b>Catering Services</b></h4>
+            <button type="button" style="background-color: red" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="modal_top_heading" class="modal-title"><b>Catering Services</b></h4>
         </div>
         <div class="modal-body">
-         <form id="catering_form">
-          <div class="form-group">
-    <label for="catering_name">Catering Services Company Name:</label>
-           <input type="text" class="form-control" id="catering_name" placeholder="Enter Name Here..." name="catering_name">
-  </div>
+             <form id="catering_form">
+                  <div class="form-group">
+                      <label for="catering_name">Catering Services Company Name:</label>
+                           <input type="text" class="form-control" id="catering_name" placeholder="Enter Name Here..." name="catering_name">
+                  </div>
 
-  <div class="form-group">
-    <label for="address2">Catering Services Company Address:</label>
-           <input type="text" class="form-control" id="address2" placeholder="Address" name="address2">
-         </div>
-         <div class="form-group">
-    <label for="area2">Catering Services Company Area:</label>
-           <input type="text" class="form-control" id="area2" placeholder="Area" name="area2">
-         </div>
+                  <div class="form-group">
+                        <label for="address2">Catering Services Company Address:</label>
+                            <input type="text" class="form-control" id="address2" placeholder="Address" name="address2">
+                  </div>
 
-         <div class="form-group">
-           
-             <label for="Pincode2" ">Pincode:</label>
-             <input id="pincode2" class="form-control " type="number" name="pincode2"  placeholder="Pincode or Postal Code ">
-         </div>
-          <div class="form-group">
-              <label for="city2" ">City District Name:</label>
-             <input id="city2" class="form-control " type="text" name="city3"  placeholder="City Or District Name">
-           </div>
-           <div class="form-group">
-  <label for="sel1">Select State:</label>
-  <select class="form-control" id="sel1">
-    <option>Select State</option>
-    <option>Andaman and Nicobar Islands</option>
-    <option>Andhra Pradesh</option>
-    <option>Arunachal Pradesh</option>
-    <option>Bihar</option>
-    <option>Chandigarh</option>
-    <option>Chhattisgarh</option>
-    <option>Dadar and Nagar Haveli</option>
-    <option>Daman and Diu</option>
-    <option>Delhi</option>
-    <option>Goa</option>
-    <option>Gujarat</option>
-    <option>Haryana</option>
-    <option>Himachal Pradesh</option>
-    <option>Jammu and Kashmir</option>
-    <option>Jharkhand</option>
-    <option>Karnataka</option>
-    <option>Kerala</option>
-    <option>Lakshadeep</option>
-    <option>Madya Pradesh</option>
-    <option>Maharashtra</option>
-    <option>Manipur</option>
-    <option>Meghalaya</option>
-    <option>Mizoram</option>
-    <option>Nagaland</option>
-    <option>Orissa</option>
-    <option>Pondicherry</option>
-    <option>Punjab</option>
-    <option>Rajasthan</option>
-    <option>Sikkim</option>
-    <option>Tamil Nadu</option>
-    <option>Tripura</option>
-    <option>Uttaranchal</option>
-    <option>Uttar Pradesh</option>
-    <option>West Bengal</option>
-    
-  </select>
-</div><div class="form-group">
-           <label for="Description">Services Description:</label>
-           <textarea class="form-control" rows="3" id="comment2" placeholder="What kind services you provide in any events. Write Here...." name="comment2"></textarea>
-      </div>
-      <div class="form-group">
-           <label for="uploadpic2">Upload Your Catering Services Company Picture </label>
-           <input type="file" class="form-control" id="uploadpic2" >
-           <br>
-           <button type="button" class="btn btn-success btn-lg btn-block" id="register_catering">Submit
-                  </button>
-         </div>
+                  <div class="form-group">
+                        <label for="area2">Catering Services Company Area:</label>
+                            <input type="text" class="form-control" id="area2" placeholder="Area" name="area2">
+                 </div>
+
+                  <div class="form-group">
+                        <label for="Pincode2" ">Pincode:</label>
+                             <input id="pincode2" class="form-control " type="number" name="pincode2"  placeholder="Pincode or Postal Code ">
+                 </div>
+
+                  <div class="form-group">
+                          <label for="city2" ">City District Name:</label>
+                                <input id="city2" class="form-control " type="text" name="city3"  placeholder="City Or District Name">
+                  </div>
+
+                  <div class="form-group">
+                           <label for="sel1">Select State:</label>
+                                <select class="form-control" id="sel1">
+                                              <option>Select State</option>
+                                              <option>Andaman and Nicobar Islands</option>
+                                              <option>Andhra Pradesh</option>
+                                              <option>Arunachal Pradesh</option>
+                                              <option>Bihar</option>
+                                              <option>Chandigarh</option>
+                                              <option>Chhattisgarh</option>
+                                              <option>Dadar and Nagar Haveli</option>
+                                              <option>Daman and Diu</option>
+                                              <option>Delhi</option>
+                                              <option>Goa</option>
+                                              <option>Gujarat</option>
+                                              <option>Haryana</option>
+                                              <option>Himachal Pradesh</option>
+                                              <option>Jammu and Kashmir</option>
+                                              <option>Jharkhand</option>
+                                              <option>Karnataka</option>
+                                              <option>Kerala</option>
+                                              <option>Lakshadeep</option>
+                                              <option>Madya Pradesh</option>
+                                              <option>Maharashtra</option>
+                                              <option>Manipur</option>
+                                              <option>Meghalaya</option>
+                                              <option>Mizoram</option>
+                                              <option>Nagaland</option>
+                                              <option>Orissa</option>
+                                              <option>Pondicherry</option>
+                                              <option>Punjab</option>
+                                              <option>Rajasthan</option>
+                                              <option>Sikkim</option>
+                                              <option>Tamil Nadu</option>
+                                              <option>Tripura</option>
+                                              <option>Uttaranchal</option>
+                                              <option>Uttar Pradesh</option>
+                                              <option>West Bengal</option>
+                                              
+                                  </select>
+                  </div>
+                  <div class="form-group">
+                       <label for="Description">Services Description:</label>
+                              <textarea class="form-control" rows="3" id="comment2" placeholder="What kind services you provide in any events. Write Here...." name="comment2"></textarea>
+                  </div>
+
+                  <div class="form-group">
+                       <label for="uploadpic2">Upload Your Catering Services Company Picture </label>
+                              <input type="file" class="form-control" id="uploadpic2" ><br>
+                   
+                                <button type="button" class="btn btn-success btn-lg btn-block" id="register_catering">Submit
+                               </button>
+                  </div>
          </form>
-        </div>
+    </div>
         
 
     
               </div> 
                       
-        </div>
-      </div>
-      </div>
+  </div>
+  </div>
+</div>
 
-      <div class="col-sm-4" id="stu1">
-
-      <h3 id="photo_top_heading"> Photography Studio Services Form   </h3>
-       <a href=""><h4 class="head4 text-center">Studio</h4></a>
-       <div class="img">
-            <img src="assets\images\photostudio.png" id="guest_image" class="img-responsive" alt="Image">
-  <br>
+    <div class="col-sm-4" id="stu1">
+        <h3 id="photo_top_heading"> Photography Studio Services Form   </h3>
+            <a href=""><h4 class="head4 text-center">Studio</h4></a>
+              <div class="img">
+                  <img src="assets\images\photostudio.png" id="guest_image" class="img-responsive" alt="Image">
+              </div><br><br>
+  
   <!-- Trigger the modal with a button -->
-  <br>
-  <button type="button" class="btn btn-info btn-lg center-block btn-block" data-toggle="modal" data-target="#myModal2">Click Here</button>
+  
+              <button type="button" class="btn btn-info btn-lg center-block btn-block" data-toggle="modal" data-target="#myModal2">Click Here</button>
 
   <!-- Modal -->
-  <div class="modal fade" id="myModal2" role="dialog">
-    <div class="modal-dialog">
+          <div class="modal fade" id="myModal2" role="dialog">
+                <div class="modal-dialog">
     
       <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 id="modal_top_heading" class="modal-title"><b>Photography Studio Services </b> </h4>
-        </div>
-        <div class="modal-body">
-         <form id="studio_form">
-          <div class="form-group">
-    <label for="studio_name">Photography Studio Name:</label>
-           <input type="text" class="form-control" id="studio_name" placeholder="Enter Name Here..." name="studio_name">
-  </div>
-  <div class="form-group">
-    <label for="address3">Photography Studio Address:</label>
-           <input type="text" class="form-control" id="address3" placeholder="Address" name="address3">
-         </div>
-         <div class="form-group">
-    <label for="address3">Photography Studio Area:</label>
-           <input type="text" class="form-control" id="address3" placeholder="Area" name="area3">
-         </div>
-         <div class="form-group">
+                   <div class="modal-content">
+                        <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 id="modal_top_heading" class="modal-title"><b>Photography Studio Services </b> </h4>
+                        </div>
+
+                        <div class="modal-body">
+                             <form id="studio_form">
+                                  <div class="form-group">
+                                        <label for="studio_name">Photography Studio Name:</label>
+                                              <input type="text" class="form-control" id="studio_name" placeholder="
+                                              Enter Name Here..." name="studio_name">
+                                  </div>
+
+                                  <div class="form-group">
+                                        <label for="address3">Photography Studio Address:</label>
+                                          <input type="text" class="form-control" id="address3" placeholder="Address" name="address3">
+                                  </div>
+
+                                   <div class="form-group">
+                                        <label for="address3">Photography Studio Area:</label>
+                                              <input type="text" class="form-control" id="address3" placeholder="Area" name="area3">
+                                   </div>
+
+                                   <div class="form-group">
+                                          <label for="Pincode" ">Pincode:</label>
+                                                <input id="pincode3" class="form-control " type="number" name="pincode3"  placeholder="Pincode or Postal Code ">
+                                   </div>
+
+                                    <div class="form-group">
+                                          <label for="city" ">City District Name:</label>
+                                                <input id="city3" class="form-control " type="text" name="city3"  placeholder="City Or District Name">
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="sel1">Select State:</label>
+                                                <select class="form-control" id="sel1">
+                                                        <option>Select State</option>
+                                                        <option>Andaman and Nicobar Islands</option>
+                                                        <option>Andhra Pradesh</option>
+                                                        <option>Arunachal Pradesh</option>
+                                                        <option>Bihar</option>
+                                                        <option>Chandigarh</option>
+                                                        <option>Chhattisgarh</option>
+                                                        <option>Dadar and Nagar Haveli</option>
+                                                        <option>Daman and Diu</option>
+                                                        <option>Delhi</option>
+                                                        <option>Goa</option>
+                                                        <option>Gujarat</option>
+                                                        <option>Haryana</option>
+                                                        <option>Himachal Pradesh</option>
+                                                        <option>Jammu and Kashmir</option>
+                                                        <option>Jharkhand</option>
+                                                        <option>Karnataka</option>
+                                                        <option>Kerala</option>
+                                                        <option>Lakshadeep</option>
+                                                        <option>Madya Pradesh</option>
+                                                        <option>Maharashtra</option>
+                                                        <option>Manipur</option>
+                                                        <option>Meghalaya</option>
+                                                        <option>Mizoram</option>
+                                                        <option>Nagaland</option>
+                                                        <option>Orissa</option>
+                                                        <option>Pondicherry</option>
+                                                        <option>Punjab</option>
+                                                        <option>Rajasthan</option>
+                                                        <option>Sikkim</option>
+                                                        <option>Tamil Nadu</option>
+                                                        <option>Tripura</option>
+                                                        <option>Uttaranchal</option>
+                                                        <option>Uttar Pradesh</option>
+                                                        <option>West Bengal</option>
+                    
+                                              </select>
+                                    </div>
+
+                                    <div class="form-group">
+                                          <label for="Description">Services Description:</label>
+                                              <textarea class="form-control" rows="3" id="comment" placeholder="What kind services you provide in any events. Write Here...."name="comment3"></textarea>
+                                    </div>
+
+                                    <div class="form-group">
+                                         <label for="uploadpic">Upload Your Photography Studio Picture </label>
+                                                <input type="file" class="form-control" id="uploadpic3" ><br>
            
-             <label for="Pincode" ">Pincode:</label>
-             <input id="pincode3" class="form-control " type="number" name="pincode3"  placeholder="Pincode or Postal Code ">
-         </div>
-          <div class="form-group">
-              <label for="city" ">City District Name:</label>
-             <input id="city3" class="form-control " type="text" name="city3"  placeholder="City Or District Name">
-           </div>
-           <div class="form-group">
-  <label for="sel1">Select State:</label>
-  <select class="form-control" id="sel1">
-    <option>Select State</option>
-    <option>Andaman and Nicobar Islands</option>
-    <option>Andhra Pradesh</option>
-    <option>Arunachal Pradesh</option>
-    <option>Bihar</option>
-    <option>Chandigarh</option>
-    <option>Chhattisgarh</option>
-    <option>Dadar and Nagar Haveli</option>
-    <option>Daman and Diu</option>
-    <option>Delhi</option>
-    <option>Goa</option>
-    <option>Gujarat</option>
-    <option>Haryana</option>
-    <option>Himachal Pradesh</option>
-    <option>Jammu and Kashmir</option>
-    <option>Jharkhand</option>
-    <option>Karnataka</option>
-    <option>Kerala</option>
-    <option>Lakshadeep</option>
-    <option>Madya Pradesh</option>
-    <option>Maharashtra</option>
-    <option>Manipur</option>
-    <option>Meghalaya</option>
-    <option>Mizoram</option>
-    <option>Nagaland</option>
-    <option>Orissa</option>
-    <option>Pondicherry</option>
-    <option>Punjab</option>
-    <option>Rajasthan</option>
-    <option>Sikkim</option>
-    <option>Tamil Nadu</option>
-    <option>Tripura</option>
-    <option>Uttaranchal</option>
-    <option>Uttar Pradesh</option>
-    <option>West Bengal</option>
-    
-  </select>
-</div><div class="form-group">
-           <label for="Description">Services Description:</label>
-           <textarea class="form-control" rows="3" id="comment" placeholder="What kind services you provide in any events. Write Here...."name="comment3"></textarea>
-      </div>
-      <div class="form-group">
-           <label for="uploadpic">Upload Your Photography Studio Picture </label>
-           <input type="file" class="form-control" id="uploadpic3" >
-           <br>
-           <button type="button" class="btn btn-success btn-lg btn-block" id="register_studio">Submit
-          </button>
-         </div>
-         </form>
-        </div>
-       
-              </div> 
-
-    
-              </div> 
-                      
-        </div>
-        </div>
-      </div>
-
-
+                                                      <button type="button" class="btn btn-success btn-lg btn-block" id="register_studio">Submit
+                                                      </button>
+                                    </div>
+                                </form>
+                        </div>
+                    </div> 
+                </div>         
+          </div>
     </div>
+</div>
+</div>
     <br><br>
     <footer class="container-fluid text-center">
   <p>&copy;Copy right www.EventsHall.com 2018-2019</p>

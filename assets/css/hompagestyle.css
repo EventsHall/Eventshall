@@ -5,14 +5,17 @@
 	text-shadow:1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;"
 
 }
-#paragraphstyle{
+
+.container#paragraphstyle{
 	background-color: black;
 }
+
 #relatedinformation{
 	font-family: Times New Roman;
 }
 #content{
 	color: white;
+	font-family: Verdana;
 }
 #serviceheading{
 	text-align: center;
