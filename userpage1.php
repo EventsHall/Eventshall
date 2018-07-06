@@ -1,9 +1,9 @@
 <?php
 
   session_start();
-  if(!isset($_SESSION['username'])){
+  if($_SESSION['id'] != session_id()) {
     header('location:login.html');
-  }
+  };
 
 
 
@@ -41,7 +41,7 @@
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="searchpage.html"><span class="glyphicon glyphicon-search"></span> Search</a></li>
                 <li><a href="contactUs.html"><span class="glyphicon glyphicon-earphone"></span> ContactUs</a></li>
-                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span>Welcome <?php echo $_SESSION['username']; ?></a></li>
                 <li><button type="submit" class="btn navbar-btn btn-danger" name="logout" id="logout"  value="Log Out" style="border-radius: 15px;"><a href="logout.php">Sign Out</a></button></li>
               </ul>
           </div> 
@@ -88,6 +88,12 @@
                       </div>
 
                 <div class="modal-body">
+                  <div class="col-md-6 col-md-offset-3">
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-leble="Close">x</button>
+                        <div id="result"></div>
+                      </div>
+                  </div>
                   <form id="guesthouse_form">
                              <div class="form-group">
                                 <label for="guesthouse name">Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Name:</label>
@@ -99,20 +105,20 @@
                               </div>
                               <div class="form-group">
                                    <label for="address">Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Area:</label>
-                                      <input type="text" class="form-control" id="area" placeholder="Area" name="area1">
+                                      <input type="text" class="form-control" id="area1" placeholder="Area" name="area1">
                               </div>
                               <div class="form-group">
            
                                   <label for="Pincode" ">Pincode:</label>
-                                      <input id="pincode" class="form-control " type="number" name="pincode1"  placeholder="Pincode or Postal Code ">
+                                      <input id="pincode1" class="form-control " type="number" name="pincode1"  placeholder="Pincode or Postal Code ">
                               </div>
                               <div class="form-group">
                                   <label for="city" ">City District Name:</label>
-                                     <input id="city" class="form-control " type="text" name="city1"  placeholder="City Or District Name">
+                                     <input id="city1" class="form-control " type="text" name="city1"  placeholder="City Or District Name">
                               </div>
                               <div class="form-group">
                               <label for="sel1">Select State:</label>
-                                  <select class="form-control" id="sel1">
+                                  <select class="form-control" id="sel1" name="sel1">
                                     <option>Select State</option>
                                     <option>Andaman and Nicobar Islands</option>
                                     <option>Andhra Pradesh</option>
@@ -161,7 +167,7 @@
                                     <textarea class="form-control" rows="3" id="comment" placeholder="What kind services you provide in any events. Write Here...." name="comment1"></textarea>
            
                                     <br>
-                                <button type="button" class="btn btn-success btn-lg btn-block" id="registe_guesthouse">Submit
+                                <button type="button" class="btn btn-success btn-lg btn-block" id="register_guesthouse">Submit
                                 </button>
                           </div>
          </form>
