@@ -1,7 +1,13 @@
 <?php 
 
 	session_start();
-	session_destroy();
-	header('location:home.html');
+	if(isset($_SESSION['id'])){
+		session_destroy();
+		unset($_SESSION['id']);
+		unset($_SESSION['username']);
+		header('location:home.html');
 
+
+	}
+	
  ?>

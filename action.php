@@ -8,10 +8,8 @@
 			echo json_encode($data);
 			# code...
 		}
-
-
-
 	}
+
 
 	function setUserData($users){
 		require 'users.php';
@@ -112,6 +110,7 @@
 						setcookie('password',base64_encode($users['password']));
 
 					}
+					$_SESSION['id'] = session_id();
 					$_SESSION['username'] = $userData['name'];
 					echo json_encode(["status" => 1, "msg" => "Login Successfull"]);
 
@@ -186,11 +185,88 @@
 		return $users;
 	}
 
-	if(isset($_POST['action']) && ($_POST['action'] == 'register_guesthouse')) {
+	//  verify and registered guesthouse in db //
 
-		echo 'hiii';
+	if(isset($_POST['action']) && ($_POST['action'] == 'register_guesthouse')) {
+			
+			$users = validate_guestHouse_form();
+			require 'guestHouse.php';
+		
+			$gHouse = new GuestHouse();
+			$gHouse->setName($users['guestHouseName']);
+			$gHouse->setAddress($users['address']);
+			$gHouse->setArea($users['hallArea']);
+			$gHouse->setPincode($users['pincode']);
+			$gHouse->setCity($users['cityName']);
+			$gHouse->setState($users['stateName']);
+			$gHouse->setUrl($users['url']);
+			$gHouse->setInfo($users['details']);
+			$gHouse->setEmail($_COOKIE['email']);
+
+			if($gHouse->saveIntoTable()){
+				echo json_encode(["status" => 1, "msg" => "data saves in guest house table"]);
+			}else{
+				echo json_encode(["status" => 0, "msg" => "data not save"]);
+			}
+			
 
 	}
+
+	function validate_guestHouse_form(){
+
+		$url = filter_var($_POST['website'], FILTER_SANITIZE_URL);
+		$users['url'] = filter_var($url, FILTER_VALIDATE_URL);
+		if(false == $users['url']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid url"]);
+			exit;
+		}
+
+	
+
+		$users['guestHouseName'] = filter_input(INPUT_POST,'guesthouse_name' ,FILTER_SANITIZE_STRING);
+		if(false == $users['guestHouseName']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid guest house name"]);
+			exit;
+		}
+
+		$users['hallArea'] = filter_input(INPUT_POST,'area1' ,FILTER_SANITIZE_STRING);
+		if(false == $users['hallArea']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid Area name"]);
+			exit;
+		}
+
+		$users['cityName'] = filter_input(INPUT_POST,'city1' ,FILTER_SANITIZE_STRING);
+		if(false == $users['cityName']){
+			echo json_encode(["status" => 0, "msg" => "Enter City or District name"]);
+			exit;
+		}
+
+		$users['stateName'] = filter_input(INPUT_POST,'sel1' ,FILTER_SANITIZE_STRING);
+			if(false == $users['stateName']){
+				echo json_encode(["status" => 0, "msg" => "choose state name"]);
+				exit;
+			}
+
+		$users['pincode'] = filter_input(INPUT_POST,'pincode1' , FILTER_SANITIZE_NUMBER_INT);
+		if(false == $users['pincode']){
+			echo json_encode(["status" => 0, "msg" => "Enter pincode"]);
+			exit;
+		}
+
+		$users['address'] = filter_input(INPUT_POST,'address1' ,FILTER_SANITIZE_STRING);
+		if(false == $users['address']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid address"]);
+			exit;
+		}
+		$users['details'] = filter_input(INPUT_POST,'comment1' ,FILTER_SANITIZE_STRING);
+		if(false == $users['details']){
+			echo json_encode(["status" => 0, "msg" => "enter valid description"]);
+			exit;
+		}
+
+		return $users;
+	}
+
 
 
  ?>
