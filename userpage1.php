@@ -1,8 +1,8 @@
 <?php
 
-  session_start();
+ session_start();
   if($_SESSION['id'] != session_id()) {
-    header('location:login.html');
+   header('location:login.html');
   };
 
 
@@ -277,7 +277,7 @@
                        <label for="uploadpic2">Upload Your Catering Services Company Picture </label>
                               <br>
                    
-                                <button type="button" class="btn btn-success btn-lg btn-block" id="register_catering"><a href="imageupload.html">Submit</a>
+                                <button type="button" class="btn btn-success btn-lg btn-block" id="register_catering"><a href="upload.php">Submit</a>
                                </button>
                   </div>
          </form>
