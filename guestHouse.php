@@ -1,18 +1,19 @@
 <?php 
+	require 'users.php';
 
 class GuestHouse
 {
 
-	private $id;
-	private $name;
-	private $address;
-	private $area;
-	private $pincode;
-	private $city;
-	private $state;
-	private $url;
-	private $info;
-	private $email;
+	protected $id;
+	protected $name;
+	protected $address;
+	protected $area;
+	protected $pincode;
+	protected $city;
+	protected $state;
+	protected $url;
+	protected $info;
+	protected $email;
 	public $conn;
 
 	function setId($id) { $this->id = $id; }
@@ -71,6 +72,22 @@ class GuestHouse
 		}
 
 	}
+
+	function getUserByEmail(){
+		//echo $objUser->getEmail();
+		$stmt=$this->conn->prepare("SELECT * FROM guest_house where email = :email");
+		echo $this->email;
+		$stmt->bindParam(':email',$this->email);
+		try {
+			if($stmt->execute()){
+				$user = $stmt->fetch(PDO::FETCH_ASSOC);
+				}
+			}
+		catch(Exception $e) {
+				echo $e->getMessage();
+			}
+			return $user;
+		}
 
 
 }
