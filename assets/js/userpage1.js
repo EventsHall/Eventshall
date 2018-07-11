@@ -7,31 +7,33 @@
   
     $("#guesthouse_form").validate({//("^[a-zA-Z]+$")
       
-      rules:{
-        guesthouse_name:{
-          required: true,
-          alpha:true,
-          minlength:5
-        },
-        address1:{
-          required:true,
-          minlength:5
-      },
-          area1:{
-          required:true,
-          minlength:5,
-          alpha:true
-        },
-        city1:{
-          required:true,
-          alpha:true,
-        },
-        pincode1:{
-          required: true,
-          number:true,
-            minlength:6,
-            maxlength:6
-        },
+        rules:{
+              guesthouse_name:{
+              required: true,
+              alpha:true,
+              minlength:5
+            },
+
+              address1:{
+              required:true,
+              minlength:5
+            },
+
+              area1:{
+              required:true,
+              minlength:5,
+              alpha:true
+            },
+              city1:{
+                required:true,
+                alpha:true,
+            },
+              pincode1:{
+                required: true,
+                number:true,
+                  minlength:6,
+                  maxlength:6
+            },
         website:{
         	required:false,
         	url:true
@@ -152,6 +154,7 @@
       }
     });
 
+
     $("#studio_form").validate({//("^[a-zA-Z]+$")
       
       rules:{
@@ -229,7 +232,39 @@
         debug: true,
         success: "valid"
       });
-    
+
+
+     $( "#register_catering" ).click(function(event) {
+         var form = $( "#catering_form" );
+         if(form.valid()){
+            event.preventDefault();
+            var form_data = $('#catering_form').serialize();
+            alert(form_data);
+            $.ajax({ 
+                url:'action.php',
+                method: 'post',
+                data: form_data + '&action=register_catering'
+            }).done(function(result){
+
+                var data = JSON.parse(result);  
+                $('.alert').show();
+                if(data.status == 0){
+                  $('#result1').html(data.msg);
+
+                }else{
+                  document.location = 'upload.php';
+                }
+            })
+
+        }else{
+          $('.alert').show();
+          $('#result1').html("form not validate please validate first");
+        }
+
+
+           
+
+       });
 
 
 
@@ -249,7 +284,7 @@
               $('#result').html(data.msg);
 
               }else{
-                document.location = 'userpage2.php';
+                document.location = 'upload.php';
               }
           })
 
@@ -261,5 +296,7 @@
 
       });
 
-    });
+    
+
+});
 

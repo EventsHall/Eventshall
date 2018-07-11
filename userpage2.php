@@ -9,9 +9,9 @@
   require 'guestHouse.php';
   $gHouse = new GuestHouse();
   $gHouse->setEmail($_COOKIE['email']);
-  echo $gHouse->getEmail();
-  $userData = $gHouse->getUserByEmail();
-  print_r($userData);
+  $guestdata = $gHouse->getUserByEmail();
+  print_r($guestdata);
+
 
 
 
@@ -145,35 +145,35 @@
   
               <table class="table table-responsive"  >
                   <tr>
-                        <th>Name:</th><td><?php echo $userData['name'] ?></td>
+                        <th>Name:</th><td><?php echo $guestdata['name'] ?></td>
                   </tr>
                   <tr>
                        <th>Owner or Manager Name:</th><td><?php echo $_SESSION['username'] ?></td>
                   </tr>
                   <tr>
                        <th>Address:</th>
-                       <td><?php echo $userData['address'] ?></td>
+                       <td><?php echo $guestdata['address'] ?></td>
                  </tr>
                   <tr>
-                       <th>Pincode:</th><td><?php echo $userData['pincode'] ?></td>
+                       <th>Pincode:</th><td><?php echo $guestdata['pincode'] ?></td>
                   </tr>
                   <tr>
-                       <th>City Or District:</th><td><?php echo $userData['city'] ?></td>
+                       <th>City Or District:</th><td><?php echo $guestdata['city'] ?></td>
                   </tr>
                   <tr>
-                       <th>State :</th><td><?php echo $userData['state'] ?></td>
+                       <th>State :</th><td><?php echo $guestdata['state'] ?></td>
                   </tr>
                   <tr>
-                        <th>Contact Number:</th><td><?php echo $userData['mobile'] ?></td>
+                        <th>Contact Number:</th><td><?php echo $guestdata['mobile'] ?></td>
                   </tr>
                   <tr>
-                        <th>Website:</th><td><a id="url_link" href="#"><?php echo $userData['url'] ?></a></td>
+                        <th>Website:</th><td><a id="url_link" href="#"><?php echo $guestdata['url'] ?></a></td>
                   </tr>
                   <tr>
-                        <th>Email Id:</th><td><?php echo $userData['email'] ?></td>
+                        <th>Email Id:</th><td><?php echo $guestdata['email'] ?></td>
                    </tr>
                    <tr>
-                         <th>Faciality & Services:</th><td><?php echo $userData['info'] ?></td>
+                         <th>Faciality & Services:</th><td><?php echo $guestdata['info'] ?></td>
                   </tr>
 
               </table>

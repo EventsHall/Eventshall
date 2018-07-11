@@ -267,6 +267,81 @@
 		return $users;
 	}
 
+	//verify catering in db//
+
+
+	if(isset($_POST['action']) && ($_POST['action'] == 'register_catering')) {
+			 $users = validate_catering_form();
+			 require 'guestHouse.php';
+		
+			$gHouse = new GuestHouse();
+			$gHouse->setName($users['cateringName']);
+			$gHouse->setAddress($users['address']);
+			$gHouse->setArea($users['cateringArea']);
+			$gHouse->setPincode($users['pincode']);
+			$gHouse->setCity($users['cityName']);
+			$gHouse->setState($users['stateName']);
+			$gHouse->setInfo($users['details']);
+			$gHouse->setEmail($_COOKIE['email']);
+
+			// if($gHouse->saveIntoCateringTable()()){
+			// 	echo json_encode(["status" => 1, "msg" => "data saves in catering table"]);
+			// }else{
+			// 	echo json_encode(["status" => 0, "msg" => "data not save"]);
+			// }
+			echo json_encode(["status" => 0, "msg" => "Enter valid catering name"]);
+			
+	}
+
+	function validate_catering_form(){
+	
+
+		$users['cateringName'] = filter_input(INPUT_POST,'catering_name' ,FILTER_SANITIZE_STRING);
+		if(false == $users['cateringName']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid catering name"]);
+			exit;
+		}
+
+		$users['cateringArea'] = filter_input(INPUT_POST,'area2' ,FILTER_SANITIZE_STRING);
+		if(false == $users['cateringArea']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid Area name"]);
+			exit;
+		}
+
+		$users['cityName'] = filter_input(INPUT_POST,'city2' ,FILTER_SANITIZE_STRING);
+		if(false == $users['cityName']){
+			echo json_encode(["status" => 0, "msg" => "Enter City or District name"]);
+			exit;
+		}
+
+		$users['stateName'] = filter_input(INPUT_POST,'sel2' ,FILTER_SANITIZE_STRING);
+			if(false == $users['stateName']){
+				echo json_encode(["status" => 0, "msg" => "choose state name"]);
+				exit;
+			}
+
+		$users['pincode'] = filter_input(INPUT_POST,'pincode2' , FILTER_SANITIZE_NUMBER_INT);
+		if(false == $users['pincode']){
+			echo json_encode(["status" => 0, "msg" => "Enter pincode"]);
+			exit;
+		}
+
+		$users['address'] = filter_input(INPUT_POST,'address2' ,FILTER_SANITIZE_STRING);
+		if(false == $users['address']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid address"]);
+			exit;
+		}
+		$users['details'] = filter_input(INPUT_POST,'comment2' ,FILTER_SANITIZE_STRING);
+		if(false == $users['details']){
+			echo json_encode(["status" => 0, "msg" => "enter valid description"]);
+			exit;
+		}
+
+		return $users;
+	}
+
+	
+
 
 
  ?>

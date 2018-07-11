@@ -1,5 +1,4 @@
 <?php 
-	require 'users.php';
 
 class GuestHouse
 {
@@ -74,7 +73,6 @@ class GuestHouse
 	}
 
 	function getUserByEmail(){
-		//echo $objUser->getEmail();
 		$stmt=$this->conn->prepare("SELECT * FROM guest_house where email = :email");
 		echo $this->email;
 		$stmt->bindParam(':email',$this->email);
@@ -88,6 +86,33 @@ class GuestHouse
 			}
 			return $user;
 		}
+
+		function saveIntoCateringTable(){
+		$sql = "INSERT INTO `catering`(`id`, `name`, `address`, `area`, `pincode`, `city`, `state`, `info`, `email`) VALUES (null, :name, :address, :area, :pincode, :city, :state, :info, :email)";
+		$stmt = $this->conn->prepare($sql);
+		$stmt->bindParam(':name',$this->name);
+		$stmt->bindParam(':address',$this->address);
+		$stmt->bindParam(':area',$this->area);
+		$stmt->bindParam(':pincode',$this->pincode);
+		$stmt->bindParam(':city',$this->city);
+		$stmt->bindParam(':state',$this->state);
+		$stmt->bindParam(':info',$this->info);
+		$stmt->bindParam(':email',$this->email);
+		
+
+		try {
+			if($stmt->execute()){
+				return true;
+			}else{
+				return false;
+			}
+			
+		} catch (Exception $e) {
+			echo $e->getMessage();
+			
+		}
+
+	}
 
 
 }

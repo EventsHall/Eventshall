@@ -94,7 +94,7 @@
                         <div id="result"></div>
                       </div>
                   </div>
-                  <form id="guesthouse_form" method="post" action="imageupload.html">
+                  <form id="guesthouse_form" method="post">
                              <div class="form-group">
                                 <label for="guesthouse name">Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Name:</label>
                                    <input type="text" class="form-control" id="guesthouse_name" placeholder="Enter Name Here..." name="guesthouse_name">
@@ -201,7 +201,13 @@
                     <h4 id="modal_top_heading" class="modal-title"><b>Catering Services</b></h4>
         </div>
         <div class="modal-body">
-             <form id="catering_form">
+                <div class="col-md-6 col-md-offset-3">
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-leble="Close">x</button>
+                        <div id="result1"></div>
+                      </div>
+                </div>
+             <form id="catering_form" method="post">
                   <div class="form-group">
                       <label for="catering_name">Catering Services Company Name:</label>
                            <input type="text" class="form-control" id="catering_name" placeholder="Enter Name Here..." name="catering_name">
@@ -224,12 +230,12 @@
 
                   <div class="form-group">
                           <label for="city2" ">City District Name:</label>
-                                <input id="city2" class="form-control " type="text" name="city3"  placeholder="City Or District Name">
+                                <input id="city2" class="form-control " type="text" name="city2"  placeholder="City Or District Name">
                   </div>
 
                   <div class="form-group">
-                           <label for="sel1">Select State:</label>
-                                <select class="form-control" id="sel1">
+                           <label for="sel2">Select State:</label>
+                                <select class="form-control" id="sel2" name="sel2">
                                               <option>Select State</option>
                                               <option>Andaman and Nicobar Islands</option>
                                               <option>Andhra Pradesh</option>
@@ -277,7 +283,7 @@
                        <label for="uploadpic2">Upload Your Catering Services Company Picture </label>
                               <br>
                    
-                                <button type="button" class="btn btn-success btn-lg btn-block" id="register_catering"><a href="upload.php">Submit</a>
+                                <button type="submit" class="btn btn-success btn-lg btn-block" id="register_catering">Submit
                                </button>
                   </div>
          </form>
@@ -285,7 +291,7 @@
         
 
     
-              </div> 
+</div> 
                       
   </div>
   </div>
