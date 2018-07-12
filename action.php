@@ -267,7 +267,7 @@
 		return $users;
 	}
 
-<<<<<<< HEAD
+
 	if(isset($_POST['action']) && ($_POST['action'] == 'register_catering')) {
 			echo json_encode(["status" => 0, "msg" => "hiiiiiiiiiiiiiiiii"]);
 			
@@ -292,7 +292,7 @@
 			// }
 			
 
-=======
+
 	//verify catering in db//
 
 
@@ -317,12 +317,12 @@
 			// }
 			echo json_encode(["status" => 0, "msg" => "Enter valid catering name"]);
 			
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
 	}
 
 	function validate_catering_form(){
 	
-<<<<<<< HEAD
+ 
 		$users['guestHouseName'] = filter_input(INPUT_POST,'guesthouse_name' ,FILTER_SANITIZE_STRING);
 		if(false == $users['guestHouseName']){
 			echo json_encode(["status" => 0, "msg" => "Enter valid guest house name"]);
@@ -331,7 +331,7 @@
 
 		$users['hallArea'] = filter_input(INPUT_POST,'area1' ,FILTER_SANITIZE_STRING);
 		if(false == $users['hallArea']){
-=======
+
 
 		$users['cateringName'] = filter_input(INPUT_POST,'catering_name' ,FILTER_SANITIZE_STRING);
 		if(false == $users['cateringName']){
@@ -341,55 +341,52 @@
 
 		$users['cateringArea'] = filter_input(INPUT_POST,'area2' ,FILTER_SANITIZE_STRING);
 		if(false == $users['cateringArea']){
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
 			echo json_encode(["status" => 0, "msg" => "Enter valid Area name"]);
 			exit;
 		}
 
-<<<<<<< HEAD
+
 		$users['cityName'] = filter_input(INPUT_POST,'city1' ,FILTER_SANITIZE_STRING);
-=======
 		$users['cityName'] = filter_input(INPUT_POST,'city2' ,FILTER_SANITIZE_STRING);
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
 		if(false == $users['cityName']){
 			echo json_encode(["status" => 0, "msg" => "Enter City or District name"]);
 			exit;
 		}
 
-<<<<<<< HEAD
+
 		$users['stateName'] = filter_input(INPUT_POST,'sel1' ,FILTER_SANITIZE_STRING);
-=======
+
 		$users['stateName'] = filter_input(INPUT_POST,'sel2' ,FILTER_SANITIZE_STRING);
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
 			if(false == $users['stateName']){
 				echo json_encode(["status" => 0, "msg" => "choose state name"]);
 				exit;
 			}
 
-<<<<<<< HEAD
+
 		$users['pincode'] = filter_input(INPUT_POST,'pincode1' , FILTER_SANITIZE_NUMBER_INT);
-=======
+
 		$users['pincode'] = filter_input(INPUT_POST,'pincode2' , FILTER_SANITIZE_NUMBER_INT);
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
 		if(false == $users['pincode']){
 			echo json_encode(["status" => 0, "msg" => "Enter pincode"]);
 			exit;
 		}
 
-<<<<<<< HEAD
+
 		$users['address'] = filter_input(INPUT_POST,'address1' ,FILTER_SANITIZE_STRING);
-=======
+
 		$users['address'] = filter_input(INPUT_POST,'address2' ,FILTER_SANITIZE_STRING);
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
 		if(false == $users['address']){
 			echo json_encode(["status" => 0, "msg" => "Enter valid address"]);
 			exit;
 		}
-<<<<<<< HEAD
 		$users['details'] = filter_input(INPUT_POST,'comment1' ,FILTER_SANITIZE_STRING);
-=======
+
 		$users['details'] = filter_input(INPUT_POST,'comment2' ,FILTER_SANITIZE_STRING);
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
 		if(false == $users['details']){
 			echo json_encode(["status" => 0, "msg" => "enter valid description"]);
 			exit;
@@ -398,10 +395,7 @@
 		return $users;
 	}
 
-<<<<<<< HEAD
-=======
-	
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
 
 
 

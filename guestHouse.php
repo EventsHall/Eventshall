@@ -72,10 +72,10 @@ class GuestHouse
 
 	}
 
-<<<<
+
 	function saveIntoCateringTable(){
 		$sql = "INSERT INTO `guest_house`(`id`, `name`, `address`, `area`, `pincode`, `city`, `state`,`info`, `email`) VALUES (null, :name, :address, :area, :pincode, :city, :state, :info, :email)";
-=======
+
 	function getUserByEmail(){
 		$stmt=$this->conn->prepare("SELECT * FROM guest_house where email = :email");
 		echo $this->email;
@@ -93,7 +93,7 @@ class GuestHouse
 
 		function saveIntoCateringTable(){
 		$sql = "INSERT INTO `catering`(`id`, `name`, `address`, `area`, `pincode`, `city`, `state`, `info`, `email`) VALUES (null, :name, :address, :area, :pincode, :city, :state, :info, :email)";
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
 		$stmt = $this->conn->prepare($sql);
 		$stmt->bindParam(':name',$this->name);
 		$stmt->bindParam(':address',$this->address);

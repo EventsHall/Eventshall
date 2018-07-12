@@ -288,13 +288,11 @@
                        <label for="Description">Services Description:</label>
                               <textarea class="form-control" rows="3" id="comment2" placeholder="What kind services you provide in any events. Write Here...." name="comment2"></textarea>
                               <button type="submit" class="btn btn-success btn-lg btn-block" id="register_catering">Submit</button>
-                   
-<<<<<<< HEAD
 
-=======
+
                                 <button type="submit" class="btn btn-success btn-lg btn-block" id="register_catering">Submit
                                </button>
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
+
                   </div>
          </form>
     </div>
