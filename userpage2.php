@@ -1,3 +1,28 @@
+<?php 
+
+  session_start();
+   if($_SESSION['id'] != session_id()) {
+    header('location:login.html');
+  };
+
+
+  require 'guestHouse.php';
+  $gHouse = new GuestHouse();
+  $gHouse->setEmail($_COOKIE['email']);
+  $guestdata = $gHouse->getUserByEmail();
+  print_r($guestdata);
+
+
+
+
+
+
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -120,35 +145,35 @@
   
               <table class="table table-responsive"  >
                   <tr>
-                        <th>Name:</th><td>Dev Palace</td>
+                        <th>Name:</th><td><?php echo $guestdata['name'] ?></td>
                   </tr>
                   <tr>
-                       <th>Owner or Manager Name:</th><td>Vinod Kumar Verma</td>
+                       <th>Owner or Manager Name:</th><td><?php echo $_SESSION['username'] ?></td>
                   </tr>
                   <tr>
                        <th>Address:</th>
-                       <td>228 EWS Gunjan Vihar Karrahi</td>
+                       <td><?php echo $guestdata['address'] ?></td>
                  </tr>
                   <tr>
-                       <th>Pincode:</th><td>208027</td>
+                       <th>Pincode:</th><td><?php echo $guestdata['pincode'] ?></td>
                   </tr>
                   <tr>
-                       <th>City Or District:</th><td>Kanpur</td>
+                       <th>City Or District:</th><td><?php echo $guestdata['city'] ?></td>
                   </tr>
                   <tr>
-                       <th>State :</th><td>Uttar Pradesh</td>
+                       <th>State :</th><td><?php echo $guestdata['state'] ?></td>
                   </tr>
                   <tr>
-                        <th>Contact Number:</th><td>8090587674</td>
+                        <th>Contact Number:</th><td><?php echo $guestdata['mobile'] ?></td>
                   </tr>
                   <tr>
-                        <th>Website:</th><td><a id="url_link" href="#">www.landmarkhotel.com</a></td>
+                        <th>Website:</th><td><a id="url_link" href="#"><?php echo $guestdata['url'] ?></a></td>
                   </tr>
                   <tr>
-                        <th>Email Id:</th><td>vinodverma150791@gmail.com</td>
+                        <th>Email Id:</th><td><?php echo $guestdata['email'] ?></td>
                    </tr>
                    <tr>
-                         <th>Faciality & Services:</th><td>We are providin good services like best AC Non Ac hall. Dj sound Service, good staff and big parking.</td>
+                         <th>Faciality & Services:</th><td><?php echo $guestdata['info'] ?></td>
                   </tr>
 
               </table>
@@ -164,9 +189,10 @@
     <footer class="container-fluid text-center">
   <p>&copy;All Copy right www.EventsHall.com 2018-2019</p>
   <div class="col-lg-12">
-  <button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-off"> SignOut</button>
-  <button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-pencil"> Update</button>
-</footer>
+    
+        <a href="logout.php"><button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-off"> SignOut</button></a>
+        <a href=""><button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-pencil"> Update</button></a>
+  </footer>
 <script src="assets/js/userfinalpage.js" type="text/javascript"></script>
 </body>
 </html>

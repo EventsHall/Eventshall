@@ -61,6 +61,10 @@
 		echo "Error creating table: " . mysqli_error($conn);
 	}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
 	$table = "CREATE TABLE catering (
 		id INT(6) PRIMARY KEY AUTO_INCREMENT NOT NULL, 
 		name VARCHAR(250) NOT NULL,
@@ -80,6 +84,11 @@
 		echo "Error creating table: " . mysqli_error($conn);
 	}
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
 	mysqli_close($conn);
 	 
 ?>

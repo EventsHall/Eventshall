@@ -34,7 +34,7 @@
   </form>
 
 
-  <br/>
+.  <br/>
   <div id="image_preview"></div>
 </div>
 
