@@ -62,13 +62,14 @@
 
  <div class="container-fluid" id="form2">
     <div class="row"><br>
-        <div class="col-sm-4  id="guest1" style="">
+        <div class="col-sm-4  id="guest1" >
     	
           <h3 id="event_form_heading"> Party Lawn,Palace, Hotel, Guest House, Banquet Hall Name Form   </h3>
   
               <a href=""><h4 class="head4 text-center">Hotel Place Party-Lawn</h4></a>
+              
             <div class="img">
-            <img src="assets\images\guesthouse.jpg" class="img-responsive"id="guest_image"  alt="Image"> 
+            <img src="assets\images\hallformpic.jpg" class="img-responsive"id="guest_image"  alt="Image"> 
             </div> <br><br>
 
    <!-- Trigger the modal with a button -->
@@ -94,7 +95,7 @@
                         <div id="result"></div>
                       </div>
                   </div>
-                  <form id="guesthouse_form" method="post" action="imageupload.html">
+                  <form id="guesthouse_form" method="post">
                              <div class="form-group">
                                 <label for="guesthouse name">Your Party Lawn, Palace, Hotel, Guest House, Banquet Hall Name:</label>
                                    <input type="text" class="form-control" id="guesthouse_name" placeholder="Enter Name Here..." name="guesthouse_name">
@@ -183,7 +184,7 @@
  <h3 id="catering_heading" style=" "> Catering Services Form   </h3>
  <a href=""><h4 class="head4 text-center">Catering</h4></a>
  <div class="img">
-            <img id="#guest_image" src="assets\images\marriagehall.jpg" class="img-responsive"  alt="Image">
+            <img id="guest_image" src="assets\images\cateringformpic.jpg" class="img-responsive"  alt="Image">
   </div>
   <br>
   <!-- Trigger the modal with a button -->
@@ -201,7 +202,13 @@
                     <h4 id="modal_top_heading" class="modal-title"><b>Catering Services</b></h4>
         </div>
         <div class="modal-body">
-             <form id="catering_form">
+          <div class="col-md-6 col-md-offset-3">
+                      <div class="alert alert-danger alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-leble="Close" >x</button>
+                        <div id="result"></div>
+                      </div>
+          </div>
+             <form id="catering_form" method="post">
                   <div class="form-group">
                       <label for="catering_name">Catering Services Company Name:</label>
                            <input type="text" class="form-control" id="catering_name" placeholder="Enter Name Here..." name="catering_name">
@@ -271,14 +278,9 @@
                   <div class="form-group">
                        <label for="Description">Services Description:</label>
                               <textarea class="form-control" rows="3" id="comment2" placeholder="What kind services you provide in any events. Write Here...." name="comment2"></textarea>
-                  </div>
-
-                  <div class="form-group">
-                       <label for="uploadpic2">Upload Your Catering Services Company Picture </label>
-                              <br>
+                              <button type="submit" class="btn btn-success btn-lg btn-block" id="register_catering">Submit</button>
                    
-                                <button type="button" class="btn btn-success btn-lg btn-block" id="register_catering"><a href="upload.php">Submit</a>
-                               </button>
+
                   </div>
          </form>
     </div>

@@ -72,6 +72,33 @@ class GuestHouse
 
 	}
 
+	function saveIntoCateringTable(){
+		$sql = "INSERT INTO `guest_house`(`id`, `name`, `address`, `area`, `pincode`, `city`, `state`,`info`, `email`) VALUES (null, :name, :address, :area, :pincode, :city, :state, :info, :email)";
+		$stmt = $this->conn->prepare($sql);
+		$stmt->bindParam(':name',$this->name);
+		$stmt->bindParam(':address',$this->address);
+		$stmt->bindParam(':area',$this->area);
+		$stmt->bindParam(':pincode',$this->pincode);
+		$stmt->bindParam(':city',$this->city);
+		$stmt->bindParam(':state',$this->state);
+		$stmt->bindParam(':info',$this->info);
+		$stmt->bindParam(':email',$this->email);
+		
+
+		try {
+			if($stmt->execute()){
+				return true;
+			}else{
+				return false;
+			}
+			
+		} catch (Exception $e) {
+			echo $e->getMessage();
+			
+		}
+
+	}
+
 
 }
 

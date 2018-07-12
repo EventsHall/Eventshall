@@ -61,6 +61,25 @@
 		echo "Error creating table: " . mysqli_error($conn);
 	}
 
+	$table = "CREATE TABLE catering (
+		id INT(6) PRIMARY KEY AUTO_INCREMENT NOT NULL, 
+		name VARCHAR(250) NOT NULL,
+		address VARCHAR(250) NOT NULL,
+		area varchar(250),
+		pincode BIGINT(6) NOT NULL,
+		city VARCHAR(50) NOT NULL,
+		state VARCHAR(50) NOT NULL,
+		info VARCHAR(250) NOT NULL,
+		email VARCHAR(50) NOT NULL,
+		FOREIGN KEY(email) REFERENCES users(email)
+		
+	)";
+	if (mysqli_query($conn, $table)) {
+		echo "Table catering created successfully";
+	} else {
+		echo "Error creating table: " . mysqli_error($conn);
+	}
+
 	mysqli_close($conn);
 	 
 ?>

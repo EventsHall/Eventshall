@@ -249,7 +249,8 @@
               $('#result').html(data.msg);
 
               }else{
-                document.location = 'userpage2.php';
+                alert('hiiiii');
+                document.location = 'upload.php';
               }
           })
 
@@ -260,6 +261,37 @@
 
 
       });
+
+   $( "#register_catering" ).click(function(event) {
+          alert('hii vikas');
+         var form = $( "#catering_form");
+          if(form.valid()){
+            event.preventDefault();
+            var form_data = $('#catering_form').serialize();
+            $.ajax({ 
+                url:'action.php',
+                method: 'post',
+                data: form_data + '&action=register_catering'
+            }).done(function(result){
+                var data = JSON.parse(result);  
+                 $('.alert').show();
+                if(data.status == 0){
+                $('#result').html(data.msg);
+
+                }else{
+                  alert('hiiiii');
+                  document.location = 'upload.php';
+                }
+            })
+
+        }else{
+          $('.alert').show();
+          $('#result').html("form not validate please validate first");
+        }
+
+
+      });
+
 
     });
 
