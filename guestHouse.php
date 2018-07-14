@@ -88,6 +88,20 @@ class GuestHouse
 			}
 
 
+		function getImageFromGuestHouse(){
+			$stmt=$this->conn->prepare('SELECT * FROM guestHouse_image  where email = :email ORDER BY image_id DESC');
+			$stmt->bindParam(':email',$this->email);
+			try {
+				if($stmt->execute()){
+					$user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+					}
+				}
+			catch(Exception $e) {
+					echo $e->getMessage();
+				}
+				return $user;
+			}
+
 		function saveIntoCateringTable(){
 		$sql = "INSERT INTO `catering`(`id`, `name`, `address`, `area`, `pincode`, `city`, `state`, `info`, `email`) VALUES (null, :name, :address, :area, :pincode, :city, :state, :info, :email)";
 
