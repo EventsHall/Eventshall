@@ -19,6 +19,11 @@
       width: 200px;
       padding: 5px;
     }
+
+    .alert{
+      display: none;
+    }
+
   </style>
 
 
@@ -27,16 +32,34 @@
 
 
 <div class="container">
-  <h1 style="text-align: center"> Upload Your Pictures </h1>
-  <form action="uploadFile.php" method="post" enctype="multipart/form-data">
-      <input type="file" id="uploadFile"accept="image/x-png,image/gif,image/jpeg" name="uploadFile[]" multiple/>
-      <input type="submit" class="btn btn-success" name='submitImage' value="Upload Image"/>
-  </form>
+    <h1 style="text-align: center"> Upload Your Pictures </h1>
+    <div class="col-md-6 col-md-offset-3">
+          <div class="alert alert-danger alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-leble="Close">x</button>
+            <div id="result"></div>
+          </div>
+    </div>
+
+    <form id="uploadForm" action="" method="post" enctype="multipart/form-data">
+        <div class="col-md-4">
+            <input type="file" name="files[]" accept="image/x-png,image/gif,image/jpeg" multiple />
+        </div>
+        <div class="col-md-6">
+          <input type="submit" class="btn btn-success" name="submit" value="Upload Image">
+        </div>
+      
+
+    </form>
 
 
-.  <br/>
-  <div id="image_preview"></div>
-</div>
+  .  <br/><br><br><br>
+    <div id="image_preview"></div>
+  </div><br><br><br>
+
+    <div class="text-center">
+      <p>If you uploaded picture than goto</p>
+      <a href="userpage2.php"><button class="btn btn-success btn-large">Go To final page</button></a>
+    </div>
 
 
 </body>
@@ -45,24 +68,27 @@
 <script type="text/javascript">
   
 
-  $("#uploadFile").change(function(){
-     $('#image_preview').html("");
-     var total_file=document.getElementById("uploadFile").files.length;
+  $(document).ready(function(){
 
+    $('#uploadForm').on('submit',function(event){
+        event.preventDefault();
+      $.ajax({ 
+              url:'uploadFile.php',
+              method: 'post',
+              data: new FormData(this),
+              contentType: false,
+              processData: false,
+              success: function(data){
 
-     for(var i=0;i<total_file;i++)
-     {
-      $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'>");
-     }
+                $('#image_preview').html(data);
+                alert("image uploaded SuccessFully");
+              }
+          })
 
+    })
 
-  });
+  })
 
-
-  $('form').ajaxForm(function() 
-   {
-    alert("Uploaded SuccessFully");
-   }); 
 
 
 </script>
