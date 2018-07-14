@@ -25,10 +25,10 @@ if(is_array($_FILES)){
 		$file_array = explode('.', $_FILES['files']['name'][$name]); 
 		$allow_ext = array('jpg', 'jpeg','png','gif');
 		if(in_array(strtolower(end($file_array)), $allow_ext)){
-			// if(file_already_uploaded($file_name, $db))
-			// 	  {
-			// 	    $file_name = $file_array[0] . '-'. rand() . '.' . end($file_array);
-			// 	  }
+			if(file_already_uploaded($file_name, $db))
+				  {
+				    $file_name = $file_array[0] . '-'. rand() . '.' . end($file_array);
+				  }
 			$target_path = "upload/".$file_name;
 			if(move_uploaded_file($source_path, $target_path)){
 				   $query = "
@@ -44,22 +44,22 @@ if(is_array($_FILES)){
 	}
 }
 
-// 	function file_already_uploaded($file_name, $db)
-// {
+	function file_already_uploaded($file_name, $db)
+{
  
-//      $query = "SELECT * FROM guestHouse_image WHERE image_name = '".$file_name."'";
-//      $statement = $db->connect()->prepare($query);
-//      $statement->execute();
-//      $number_of_rows = $statement->rowCount();
-//      if($number_of_rows > 0)
-//      {
-//       return true;
-//      }
-//      else
-//      {
-//       return false;
-//      }
-// }
+     $query = "SELECT * FROM guestHouse_image WHERE image_name = '".$file_name."'";
+     $statement = $db->connect()->prepare($query);
+     $statement->execute();
+     $number_of_rows = $statement->rowCount();
+     if($number_of_rows > 0)
+     {
+      return true;
+     }
+     else
+     {
+      return false;
+     }
+}
  echo $output;
 
 ?>
