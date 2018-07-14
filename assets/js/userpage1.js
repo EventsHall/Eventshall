@@ -268,7 +268,7 @@
 
 
 
-   $( "#register_guesthouse" ).click(function(event) {
+   $("#register_guesthouse" ).click(function(event) {
          var form = $( "#guesthouse_form" );
          if(form.valid()){
           event.preventDefault();
@@ -279,7 +279,7 @@
               data: form_data + '&action=register_guesthouse'
           }).done(function(result){
               var data = JSON.parse(result);  
-               $('.alert').show();
+              $('.alert').show();
               if(data.status == 0){
               $('#result').html(data.msg);
 
