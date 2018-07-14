@@ -81,6 +81,7 @@
 		echo "Error creating table: " . mysqli_error($conn);
 	}
 
+
 	$table = "CREATE TABLE `guestHouse_image` (
 				  `image_id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
 				  `image_name` varchar(250) NOT NULL,
@@ -93,8 +94,6 @@
 	} else {
 		echo "Error creating table: " . mysqli_error($conn);
 	}
-
-
 
 
 	mysqli_close($conn);
