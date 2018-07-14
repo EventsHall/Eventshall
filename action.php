@@ -272,6 +272,7 @@
 
 	if(isset($_POST['action']) && ($_POST['action'] == 'register_catering')) {
 			 $users = validate_catering_form();
+
 			 require 'guestHouse.php';
 		
 			$gHouse = new GuestHouse();
@@ -284,12 +285,12 @@
 			$gHouse->setInfo($users['details']);
 			$gHouse->setEmail($_COOKIE['email']);
 
-			// if($gHouse->saveIntoCateringTable()()){
-			// 	echo json_encode(["status" => 1, "msg" => "data saves in catering table"]);
-			// }else{
-			// 	echo json_encode(["status" => 0, "msg" => "data not save"]);
-			// }
-			echo json_encode(["status" => 0, "msg" => "Enter valid catering name"]);
+			if($gHouse->saveIntoCateringTable()){
+				echo json_encode(["status" => 1, "msg" => "data saves in catering table"]);
+			}else{
+				echo json_encode(["status" => 0, "msg" => "data not save"]);
+			}
+			
 			
 	}
 
