@@ -81,6 +81,20 @@
 		echo "Error creating table: " . mysqli_error($conn);
 	}
 
+	$table = "CREATE TABLE `guestHouse_image` (
+				  `image_id` int(11) PRIMARY KEY AUTO_INCREMENT NOT NULL,
+				  `image_name` varchar(250) NOT NULL,
+				   email VARCHAR(50) NOT NULL,
+					FOREIGN KEY(email) REFERENCES users(email)
+				)";
+
+	if (mysqli_query($conn, $table)) {
+		echo "Table guestHouse_image created successfully";
+	} else {
+		echo "Error creating table: " . mysqli_error($conn);
+	}
+
+
 
 
 	mysqli_close($conn);
