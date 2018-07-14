@@ -202,21 +202,12 @@
                     <h4 id="modal_top_heading" class="modal-title"><b>Catering Services</b></h4>
         </div>
         <div class="modal-body">
-<<<<<<< HEAD
-          <div class="col-md-6 col-md-offset-3">
-                      <div class="alert alert-danger alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-leble="Close" >x</button>
-                        <div id="result"></div>
-                      </div>
-          </div>
-=======
                 <div class="col-md-6 col-md-offset-3">
                       <div class="alert alert-danger alert-dismissible" role="alert">
                         <button type="button" class="close" data-dismiss="alert" aria-leble="Close">x</button>
                         <div id="result1"></div>
                       </div>
                 </div>
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
              <form id="catering_form" method="post">
                   <div class="form-group">
                       <label for="catering_name">Catering Services Company Name:</label>
@@ -288,11 +279,6 @@
                        <label for="Description">Services Description:</label>
                               <textarea class="form-control" rows="3" id="comment2" placeholder="What kind services you provide in any events. Write Here...." name="comment2"></textarea>
                               <button type="submit" class="btn btn-success btn-lg btn-block" id="register_catering">Submit</button>
-
-
-                                <button type="submit" class="btn btn-success btn-lg btn-block" id="register_catering">Submit
-                               </button>
-
                   </div>
          </form>
     </div>
