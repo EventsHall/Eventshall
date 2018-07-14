@@ -284,10 +284,6 @@
               $('#result').html(data.msg);
 
               }else{
-<<<<<<< HEAD
-                alert('hiiiii');
-=======
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
                 document.location = 'upload.php';
               }
           })
@@ -300,42 +296,4 @@
 
       });
 
-<<<<<<< HEAD
-   $( "#register_catering" ).click(function(event) {
-          alert('hii vikas');
-         var form = $( "#catering_form");
-          if(form.valid()){
-            event.preventDefault();
-            var form_data = $('#catering_form').serialize();
-            $.ajax({ 
-                url:'action.php',
-                method: 'post',
-                data: form_data + '&action=register_catering'
-            }).done(function(result){
-                var data = JSON.parse(result);  
-                 $('.alert').show();
-                if(data.status == 0){
-                $('#result').html(data.msg);
-
-                }else{
-                  alert('hiiiii');
-                  document.location = 'upload.php';
-                }
-            })
-
-        }else{
-          $('.alert').show();
-          $('#result').html("form not validate please validate first");
-        }
-
-
-      });
-
-
-    });
-=======
-    
-
 });
->>>>>>> ebb62de8cd28c09a4bb452348070ee49a9b724cb
-
