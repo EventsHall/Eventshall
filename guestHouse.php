@@ -89,7 +89,7 @@ class GuestHouse
 
 
 		function getImageFromGuestHouse(){
-			$stmt=$this->conn->prepare('SELECT * FROM guestHouse_image  where email = :email ORDER BY image_id DESC');
+			$stmt=$this->conn->prepare('SELECT * FROM guestHouse_image  where email = :email ORDER BY image_id DESC limit 10');
 			$stmt->bindParam(':email',$this->email);
 			try {
 				if($stmt->execute()){
