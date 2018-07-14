@@ -10,8 +10,10 @@
   $gHouse = new GuestHouse();
   $gHouse->setEmail($_COOKIE['email']);
   $guestdata = $gHouse->getUserByEmail();
-  print_r($guestdata);
-
+  $guestImage = $gHouse->getImageFromGuestHouse();
+  //print_r($guestdata);
+  print_r($guestImage);
+  print_r(sizeof($guestImage));
 
 
 
@@ -37,71 +39,51 @@
 <body>
 <h2 class="blink" id="top_heading" style=";">Gallary Picture</h2>  
 </div><br><br>
+
 <div class="container" >
-  <div class="mySlides">
-    <div class="numbertext">1 / 10</div>
-    <img src="assets/images/marriagehall.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">2 / 10</div>
-    <img src="assets/images/marriagehall2.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 10</div>
-    <img src="assets/images/marriagehall3.jpg" style="width:100%">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">4 / 10</div>
-    <img src="assets/images/marriagehall4.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">5 / 10</div>
-    <img src="assets/images/marriagehall5.jpg" style="width:100%">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">6 / 10</div>
-    <img src="assets/images/marriagehall6.jpg" style="width:100%">
-  </div>
-
-<div class="row">
-  <div class="mySlides">
-    <div class="numbertext">7 / 10</div>
-    <img src="assets/images/marriagehall7.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">8 / 10</div>
-    <img src="assets/images/marriagehall8.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">9 /10</div>
-    <img src="assets/images/marriagehall12.jpg" style="width:100%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">10/10</div>
-    <img src="assets/images/marriagehall10.jpg" style="width:100%">
-  </div>
-</div>
+  <div class="row">
+       <?php 
+            $count =0;
+            foreach ($guestImage  as $row) {
+              $count +=1;
+              
+          ?>
+     
+    <div class="mySlides">
+        <div class="numbertext"><?php echo $count ?> / 10</div>
+        <img src="upload/<?php  echo $row['image_name'] ?>" style="width:100%">
+    </div>
    
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
+   
+ 
+  <?php 
+  } 
+
+  ?>
+ </div>
+   <a class="prev" onclick="plusSlides(-1)">❮</a>
   <a class="next" onclick="plusSlides(1)">❯</a>
 
+  
   <div class="caption-container">
     <p id="caption"></p>
   </div>
 <div class="row">
+         <?php 
+            $count =0;
+            foreach ($guestImage  as $row) {
+                $count +=1;
+              
+          ?>
   
     <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall.jpg" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      <img class="demo cursor" src="upload/<?php  echo $row['image_name'] ?>" style="width:100%" onclick="currentSlide($count)" alt="<?php  echo $row['image_name'] ?>">
     </div>
-    <div class="column">
+     <?php 
+          } 
+
+      ?>
+   <!--  <div class="column">
       <img class="demo cursor" src="assets/images/marriagehall2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
     </div>
     <div class="column">
@@ -116,8 +98,8 @@
     <div class="column">
       <img class="demo cursor" src="assets/images/marriagehall6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
     
-  </div>
-    <div class="row" id="gallaryarea">
+  </div> -->
+    <!-- <div class="row" id="gallaryarea">
     <div class="column">
       <img class="demo cursor" src="assets/images/marriagehall7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Snowy Mountains">
     </div>
@@ -130,7 +112,7 @@
     <div class="column">
       <img class="demo cursor" src="assets/images/marriagehall10.jpg" style="width:100%" onclick="currentSlide(10)" alt="Snowy Mountains">
     </div>
-  </div>
+  </div> -->
 </div>
 </div>
 <br>
