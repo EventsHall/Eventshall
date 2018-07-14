@@ -21,13 +21,15 @@ if(is_array($_FILES)){
 	foreach ($_FILES['files']['name'] as $name => $value) {
 		// break image.jpg into  image and jpg in to two fields //
 		$file_name = $_FILES["files"]["name"][$name];
-    	$tmp_name = $_FILES["files"]['tmp_name'][$name];
+    	$source_path = $_FILES["files"]['tmp_name'][$name];
 		$file_array = explode('.', $_FILES['files']['name'][$name]); 
 		$allow_ext = array('jpg', 'jpeg','png','gif');
-		if(in_array(strtolower($file_array[1]), $allow_ext)){
-			$new_name = md5(rand()).'.'.$file_array[1];
-			$source_path = $_FILES['files']['tmp_name'][$name];
-			$target_path = "upload/".$new_name;
+		if(in_array(strtolower(end($file_array)), $allow_ext)){
+			// if(file_already_uploaded($file_name, $db))
+			// 	  {
+			// 	    $file_name = $file_array[0] . '-'. rand() . '.' . end($file_array);
+			// 	  }
+			$target_path = "upload/".$file_name;
 			if(move_uploaded_file($source_path, $target_path)){
 				   $query = "
 				     INSERT INTO guestHouse_image (image_name,email) 
@@ -41,6 +43,23 @@ if(is_array($_FILES)){
 		# code...
 	}
 }
+
+// 	function file_already_uploaded($file_name, $db)
+// {
+ 
+//      $query = "SELECT * FROM guestHouse_image WHERE image_name = '".$file_name."'";
+//      $statement = $db->connect()->prepare($query);
+//      $statement->execute();
+//      $number_of_rows = $statement->rowCount();
+//      if($number_of_rows > 0)
+//      {
+//       return true;
+//      }
+//      else
+//      {
+//       return false;
+//      }
+// }
  echo $output;
 
 ?>
