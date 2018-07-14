@@ -11,14 +11,7 @@
   $gHouse->setEmail($_COOKIE['email']);
   $guestdata = $gHouse->getUserByEmail();
   $guestImage = $gHouse->getImageFromGuestHouse();
-  //print_r($guestdata);
-  print_r($guestImage);
-  print_r(sizeof($guestImage));
-
-
-
-
-
+  
 
  ?>
 
