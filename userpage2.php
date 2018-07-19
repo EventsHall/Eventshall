@@ -70,42 +70,13 @@
           ?>
   
     <div class="column">
-      <img class="demo cursor" src="upload/<?php  echo $row['image_name'] ?>" style="width:100%" onclick="currentSlide($count)" alt="<?php  echo $row['image_name'] ?>">
+      <img class="demo cursor" src="upload/<?php  echo $row['image_name'] ?>" style="width:100%" onclick="currentSlide(<?php echo $count  ?>)" alt="<?php  echo $row['image_name'] ?>">
     </div>
      <?php 
           } 
 
       ?>
-   <!--  <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-    </div>    
-    <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall6.jpg" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-    
-  </div> -->
-    <!-- <div class="row" id="gallaryarea">
-    <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall7.jpg" style="width:100%" onclick="currentSlide(7)" alt="Snowy Mountains">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Snowy Mountains">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall12.jpg" style="width:100%" onclick="currentSlide(9)" alt="Snowy Mountains">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="assets/images/marriagehall10.jpg" style="width:100%" onclick="currentSlide(10)" alt="Snowy Mountains">
-    </div>
-  </div> -->
+  
 </div>
 </div>
 <br>
@@ -139,7 +110,7 @@
                        <th>State :</th><td><?php echo $guestdata['state'] ?></td>
                   </tr>
                   <tr>
-                        <th>Contact Number:</th><td><?php echo $guestdata['mobile'] ?></td>
+                        <th>Contact Number:</th><td><?php echo $_SESSION['mobile'] ?></td>
                   </tr>
                   <tr>
                         <th>Website:</th><td><a id="url_link" href="#"><?php echo $guestdata['url'] ?></a></td>
