@@ -10,6 +10,27 @@
   <link rel="stylesheet" type="text/css" href="assets/css/home.css">
   <link rel="stylesheet" type="text/css" href="assets/css/search_page_style.css">
 
+  <script type="text/javascript" >
+    $(document).ready(function(){
+      
+
+      $("#UserName").keyup(function(){
+        var UserName = $("#UserName").val();
+        
+         $.ajax({
+          type:"POST",
+        url:"searchpage.php",
+          data:{UserName:UserName},
+          success:function(res){
+            
+            $("#UserList").html(res);
+
+          }
+         });
+      });
+    });
+  </script>
+
 
 </head>
 
@@ -51,24 +72,14 @@
 			<div class=" col-md-12 col-md-6 col-md-offset-3">     
 					<div class="row">
 
-							<br><br><br>
               <h1 id="heading_top">Search Page</h1>
               <br><br>
-
-						<form role="form" id="form-buscar">
-							<div class="form-group">
-									<div class="input-group">
-									<input id="Search" class="form-control" type="text" name="search" placeholder="Search Here......." required="required" style="">
-										<span class="input-group-btn">
-										<button class="btn btn-default " type="submit" value="Search"  > <i class="glyphicon glyphicon-search" aria-hidden="true"></i></button>
-
-									
-										</span>
-										</div>
-							</div>
-							</form>
-					</div>            
-			</div>
+									<input id="UserName"type="text" name="search" placeholder="Search Here......." required="required" style="height:50px; width: 100%">
+                  <div id="UserList"style="background-color: white">
+                  </div>
+                    
+					</div>		
+    </div>        
 </div>
 <!-- End Search section-->
 

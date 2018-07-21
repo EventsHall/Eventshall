@@ -137,7 +137,7 @@
   <div class="col-lg-12">
     
         <a href="logout.php"><button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-off"> SignOut</button></a>
-        <a href=""><button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-pencil"> Update</button></a>
+        <a href="updatepage.php"><button style=" " class="btn btn-danger btn-lg glyphicon glyphicon-pencil"> Update</button></a>
   </footer>
 <script src="assets/js/userfinalpage.js" type="text/javascript"></script>
 </body>

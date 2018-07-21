@@ -1,3 +1,23 @@
+<?php 
+
+  session_start();
+   if($_SESSION['id'] != session_id()) {
+    header('location:login.html');
+  };
+
+
+  require 'guestHouse.php';
+  $gHouse = new GuestHouse();
+  $gHouse->setEmail($_COOKIE['email']);
+  $guestdata = $gHouse->getUserByEmail();
+  $guestImage = $gHouse->getImageFromGuestHouse();
+  
+
+ ?>
+
+
+
+
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -119,51 +139,88 @@
   <table class="table table-responsive"  >
     <tr>
       <th>Name:</th>
-      <td><p>Dev Palace</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger "style=" ">Ok</button></td></td>
+      <td><input type="text" name="" value="<?php echo $guestdata['name'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger "style=" ">Ok</button></td></td>
     </tr>
     <tr>
       <th>Owner or Manager Name:</th>
-      <td><p>Vinod Kumar Verma</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
+      <td><input type="text" name="" value="<?php echo $_SESSION['username'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
     </tr>
     <tr>
       <th>Address:</th>
-      <td><p>228 EWS Gunjan Vihar Karrahi</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
+      <td><input type="text" name="" value="<?php echo $guestdata['address'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
     </tr>
     <tr>
       <th>Pincode:</th>
-      <td><p>208027</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
+      <td><input type="text" name="" value="<?php echo $guestdata['pincode'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td>
     </tr>
     <tr>
       <th>City Or District:</th>
-      <p><td>Kanpur</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger "">Ok</button></td></td>
+      <td><input type="text" name="" value="<?php echo $guestdata['city'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger "">Ok</button></td>
     </tr>
     <tr>
       <th>State :</th>
-      <td><p>Uttar Pradesh</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+      <td> <select class="form-control" id="sel1" name="sel1">
+                                    <option>Select State</option>
+                                    <option>Andaman and Nicobar Islands</option>
+                                    <option>Andhra Pradesh</option>
+                                    <option>Arunachal Pradesh</option>
+                                    <option>Bihar</option>
+                                    <option>Chandigarh</option>
+                                    <option>Chhattisgarh</option>
+                                    <option>Dadar and Nagar Haveli</option>
+                                    <option>Daman and Diu</option>
+                                    <option>Delhi</option>
+                                    <option>Goa</option>
+                                    <option>Gujarat</option>
+                                    <option>Haryana</option>
+                                    <option>Himachal Pradesh</option>
+                                    <option>Jammu and Kashmir</option>
+                                    <option>Jharkhand</option>
+                                    <option>Karnataka</option>
+                                    <option>Kerala</option>
+                                    <option>Lakshadeep</option>
+                                    <option>Madya Pradesh</option>
+                                    <option>Maharashtra</option>
+                                    <option>Manipur</option>
+                                    <option>Meghalaya</option>
+                                    <option>Mizoram</option>
+                                    <option>Nagaland</option>
+                                    <option>Orissa</option>
+                                    <option>Pondicherry</option>
+                                    <option>Punjab</option>
+                                    <option>Rajasthan</option>
+                                    <option>Sikkim</option>
+                                    <option>Tamil Nadu</option>
+                                    <option>Tripura</option>
+                                    <option>Uttaranchal</option>
+                                    <option>Uttar Pradesh</option>
+                                    <option>West Bengal</option>
+                            
+                          </select><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
     </tr>
     <tr>
       <th>Contact Number:</th>
-      <p><td>8090587674</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+      <td><input type="number" name="" value="<?php echo $_SESSION['mobile'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
     </tr>
     <tr>
       <th>Website:</th>
-      <td><p><a id="url_website" href="#">www.landmarkhotel.com</a></p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger">Ok</button></td></td>
+      <td><input type="text" name="" value="<?php echo $guestdata['url'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger">Ok</button></td></td>
     </tr>
     <tr>
       <th>Email Id:</th>
-      <td><p>vinodverma150791@gmail.com</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+      <td><input type="email" name="" value="<?php echo $guestdata['email'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
     </tr>
     <tr>
       <th>Faciality & Services:</th>
-      <td><p style="text-align: justify-all;">We are providin good services like best AC Non Ac hall. Dj sound Service, good staff and big parking.</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+      <td><input type="text" name="" value="<?php echo $guestdata['info'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
     </tr>
     <tr>
       <th>Change Password:</th>
-      <td><p style="">123456789</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+      <td><input type="password" name="" value="<?php echo $_SESSION['password'] ?>"><button id="update_btn" class="btn btn-md btn-danger">Edit</button><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
     </tr>
     <tr>
       <th>Confirm Password:</th>
-      <td><p style="">123456789</p><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
+      <td><input type="text" name="" valu=""><button id="update_btn" class="btn btn-md btn-danger">Update</button><button class="btn btn-md btn-danger ">Ok</button></td></td>
     </tr>
     <tr>
   </table>
