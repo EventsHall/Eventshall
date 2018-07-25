@@ -1,4 +1,5 @@
 <?php
+
 	try{
 		$conn= new PDO("mysql:host=localhost; dbname=myeventshall_db","root","");
 		
@@ -50,15 +51,20 @@
 // echo "</table>";
 			 
 			while ($data=$req->fetch()) {
+				$id=$data['id'];
+
 				?>
+				<form action="" method="post">
 				
 				
-				<div class="User" style="height:auto;width:100%; padding-left: 10px;">
 					<img src="upload/<?php  echo $data['image_name'] ?>" style="width: 100px; height: 100px">&nbsp;
-				<span class="UserName" style="font-size: 15px;color: #000;"><h2 style="text-transform: uppercase;"><?php echo $data['name'];?></h2></span>&nbsp;<span class="Address" style="font-size: 12px;color: #888;"><?php echo $data['address'];?><br>
+				<span class="UserName" style="font-size: 15px;color: #000;"><h2 style="text-transform: uppercase;"><a href="display.php?id=<?php echo $id;?>"><?php echo $data['name'];?></a></h2></span>&nbsp;<span class="Address" style="font-size: 12px;color: #888;"><?php echo $data['address'];?><?php echo $data['city'];?><?php echo $data['pincode'];?><br>
 
-					<span class="Address" style="font-size: 12px;color: #888;"><?php echo $data['area'];?></span><button style="float: right; background-color:green; width:150px; color:white;font-size:20px;height:50px; padding-right:20px;">View</button><br>
+					<span class="Address" style="font-size: 12px;color: #888;"><?php echo $data['area'];?></span>
 
+					<button type="submit" style="float: right; background-color:green; width:150px; color:white;font-size:20px;height:50px; padding-right:20px;"id="<?php echo $data['id'];?> class="view" href="display.php?id=<?php echo $id;?>" > View</button>
+					<br>
+						<span class="email"><h1><?php echo $id;?></h1></span>
 						<span class="email"><?php echo $data['image_name'];?></span>
 					<span class="City"><?php echo $data['city'];?></span>
 					<span class="PostalCode"><?php echo $data['pincode'];?></span>
@@ -67,7 +73,8 @@
 					
 					<hr>
 					
-				</div>
+				
+				</form>
 				
 				<?php
 			}

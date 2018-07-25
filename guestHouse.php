@@ -86,6 +86,19 @@ class GuestHouse
 				}
 				return $user;
 			}
+			function getUserById(){
+			$stmt=$this->conn->prepare('SELECT * FROM guest_house WHERE id = :id');
+			$stmt->bindParam(':id',$this->id);
+			try {
+				if($stmt->execute()){
+					$user = $stmt->fetch(PDO::FETCH_ASSOC);
+					}
+				}
+			catch(Exception $e) {
+					echo $e->getMessage();
+				}
+				return $user;
+			}
 
 
 		function getImageFromGuestHouse(){

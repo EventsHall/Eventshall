@@ -19,7 +19,7 @@
         
          $.ajax({
           type:"POST",
-        url:"searchpage.php",
+          url:"searchpage.php",
           data:{UserName:UserName},
           success:function(res){
             
@@ -27,6 +27,10 @@
 
           }
          });
+         function pageRedirect() {
+      window.location.href = "https://www.tutorialrepublic.com/";
+    }      
+         
       });
     });
   </script>
