@@ -1,9 +1,9 @@
 <?php
 
-// session_start();
-//   if($_SESSION['id'] != session_id()) {
-//    header('location:login.html');
-//   };
+session_start();
+  if($_SESSION['id'] != session_id()) {
+   header('location:login.html');
+  };
 
 $email = $_COOKIE['email'];
 require 'dbconnect.php';
