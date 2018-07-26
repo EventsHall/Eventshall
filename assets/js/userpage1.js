@@ -239,7 +239,6 @@
          if(form.valid()){
             event.preventDefault();
             var form_data = $('#catering_form').serialize();
-            alert(form_data);
             $.ajax({ 
                 url:'action.php',
                 method: 'post',
@@ -254,7 +253,7 @@
                 }else{
                   document.location = 'upload.php';
                 }
-            })
+            });
 
         }else{
           $('.alert').show();

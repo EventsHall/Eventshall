@@ -162,3 +162,8 @@ tr:hover{background-color:lightgray}
     76%{ opacity: 0;}
     100%{opacity: 0;}
    }
+
+
+.alert{
+  display: none;
+}
