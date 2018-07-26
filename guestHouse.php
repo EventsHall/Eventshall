@@ -143,6 +143,36 @@ class GuestHouse
 
 	}
 
+	function updateIntoGuestHouseTable(){
+		$sql = "UPDATE `guest_house` SET name=:name, address=:address,pincode=:pincode,city=:city,url=:url,info=:info WHERE email = :email";
+		$stmt = $this->conn->prepare($sql);
+		$stmt->bindParam(':name',$this->name);
+		$stmt->bindParam(':address',$this->address);
+		$stmt->bindParam(':pincode',$this->pincode);
+		$stmt->bindParam(':city',$this->city);
+		$stmt->bindParam(':url',$this->url);
+		$stmt->bindParam(':info',$this->info);
+		$stmt->bindParam(':email',$this->email);
+		
+
+		try {
+			if($stmt->execute()){
+				return true;
+			}else{
+				return false;
+			}
+			
+		} catch (Exception $e) {
+			echo $e->getMessage();
+			
+		}
+
+	}
+
+
+
+
+
 
 }
 
