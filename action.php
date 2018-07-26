@@ -2,7 +2,7 @@
 	session_start();
 
 	if(isset($_POST['action']) && ($_POST['action'] == 'checkCookies')) {
-		echo $_POST['action'];
+		
 		if (isset($_COOKIE['email'], $_COOKIE['password'])){
 			$data = ['email'=>$_COOKIE['email'],'password'=>base64_decode($_COOKIE['password'])];
 			echo json_encode($data);
