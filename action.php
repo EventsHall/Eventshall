@@ -216,10 +216,10 @@
 
 		$url = filter_var($_POST['website'], FILTER_SANITIZE_URL);
 		$users['url'] = filter_var($url, FILTER_VALIDATE_URL);
-		if(false == $users['url']){
-			echo json_encode(["status" => 0, "msg" => "Enter valid url"]);
-			exit;
-		}
+		// if(false == $users['url']){
+		// 	echo json_encode(["status" => 0, "msg" => "Enter valid url"]);
+		// 	exit;
+		// }
 
 	
 
@@ -296,6 +296,70 @@
 			
 
 	}
+
+	if(isset($_POST['action']) && ($_POST['action'] == 'update_gHouse')) {
+			 $users = validate_Update_guestHouse_form();
+
+			require 'guestHouse.php';
+		
+			$gHouse = new GuestHouse();
+			$gHouse->setName($users['guestHouseName']);
+			$gHouse->setAddress($users['address']);
+			$gHouse->setPincode($users['pincode']);
+			$gHouse->setCity($users['cityName']);
+			$gHouse->setInfo($users['details']);
+			$gHouse->setEmail($_COOKIE['email']);
+			$gHouse->setUrl($users['url']);
+
+			 if($gHouse->updateIntoGuestHouseTable()){
+				echo json_encode(["status" => 1, "msg" => "update guest house table"]);
+			}else{
+				echo json_encode(["status" => 0, "msg" => "not updated"]);
+			}
+			
+			
+
+	}
+
+	function validate_Update_guestHouse_form(){
+
+		$url = filter_var($_POST['url'], FILTER_SANITIZE_URL);
+		$users['url'] = filter_var($url, FILTER_VALIDATE_URL);
+
+	
+
+		$users['guestHouseName'] = filter_input(INPUT_POST,'gHouse_name' ,FILTER_SANITIZE_STRING);
+		if(false == $users['guestHouseName']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid guest house name"]);
+			exit;
+		}
+
+		$users['cityName'] = filter_input(INPUT_POST,'city' ,FILTER_SANITIZE_STRING);
+		if(false == $users['cityName']){
+			echo json_encode(["status" => 0, "msg" => "Enter City or District name"]);
+			exit;
+		}
+
+		$users['pincode'] = filter_input(INPUT_POST,'pincode' , FILTER_SANITIZE_NUMBER_INT);
+		if(false == $users['pincode']){
+			echo json_encode(["status" => 0, "msg" => "Enter pincode"]);
+			exit;
+		}
+
+		$users['address'] = filter_input(INPUT_POST,'address' ,FILTER_SANITIZE_STRING);
+		if(false == $users['address']){
+			echo json_encode(["status" => 0, "msg" => "Enter valid address"]);
+			exit;
+		}
+		$users['details'] = filter_input(INPUT_POST,'info' ,FILTER_SANITIZE_STRING);
+		if(false == $users['details']){
+			echo json_encode(["status" => 0, "msg" => "enter valid description"]);
+			exit;
+		}
+
+		return $users;
+	}
+
 
 	function validate_catering_form(){
 	
