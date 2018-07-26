@@ -1,66 +1,151 @@
 
-<?php
-if(isset($_GET['id'])){
-$mysql_hostname = 'localhost';
-$mysql_username = 'root';
-$mysql_password = '';
-$mysql_dbname = 'myeventshall_db';
+<?php 
 
+     $id = $_GET['id'];
+     require 'dbconnect.php';
+     $db = new DbConnect();
 
+     $query = "SELECT * FROM guest_house WHERE id =:id";
+     $statement = $db->connect()->prepare($query);
+     $statement->bindParam(':id',$id);
+     $statement->execute();
+     $result = $statement->fetch();
+     //print_r($result);
+     $number_of_rows = $statement->rowCount();
 
-try {
+     $stmt =$db->connect()->prepare('SELECT * FROM guestHouse_image  where email = :email ORDER BY image_id DESC limit 10');
+     $stmt->bindParam(':email',$result['email']);
+     $stmt->execute();
+     $images = $stmt->fetchAll();
+     $number_of_image_rows = $stmt->rowCount();
 
+     $stmt =$db->connect()->prepare('SELECT name,mobile FROM users  where email = :email');
+     $stmt->bindParam(':email',$result['email']);
+     $stmt->execute();
+     $users = $stmt->fetch();
 
-
-$pdo= new PDO("mysql:host=$mysql_hostname;dbname=$mysql_dbname", $mysql_username, $mysql_password); 
-     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-     // $query="SELECT * FROM guest_house";
-     // $data = $pdo->query($query);
-     // echo '<table width="70%" border="1"cellpadding="5" cellspacing="5">
-     // <tr>
-     // 	<th>ID</th>
-     // 	<th>Name</th>
-     // 	<th>Gender</th>
-     // 	<th>Designation</th>
-     // 	</tr>';
-     // 	foreach ($data as $row) {
-     // 		echo'<tr>
-     // 	<th>'.$row['id'].'</th>
-     // 	<th>'.$row['name'].'</th>
-     // 	<th>'.$row['address'].'</th>
-     // 	<th>'.$row['city'].'</th>
-     // 	</tr>';
-     		
-     // 	}
-     // 	echo'</table>';
-     $statement = $pdo->prepare("SELECT * FROM guest_house WHERE id =:id");
-     $statement->execute(array(
-     	':id' =>  $_GET['id']  
-
-     ));
-     echo '<table width="70%" border="1"cellpadding="5" cellspacing="5">
-      <tr>
-     	<th>ID</th>
-     	<th>Name</th>
-     	<th>Address</th>
-     	<th>City</th>
-     	</tr>';
-     	foreach ($statement as $row) {
-     		echo'<tr>
-     	<th>'.$row['id'].'</th>
-     	<th>'.$row['name'].'</th>
-     	<th>'.$row['address'].'</th>
-     	<th>'.$row['city'].'</th>
-     	</tr>';
-     		
-     	}
-     	echo'</table>';
-
-
-} catch (PDOException $e) {
-     echo $e->getMessage();
-}
-
-}
 ?>
+
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/userfinalpage2_style.css">
+
+
+</head>
+<body>
+<h2 class="blink" id="top_heading" style=";">Details</h2>  
+</div><br><br>
+
+<div class="container" >
+  <div class="row">
+       <?php 
+            $count =0;
+            foreach ($images  as $row) {
+              $count +=1;
+              
+          ?>
+     
+    <div class="mySlides">
+        <div class="numbertext"><?php echo $count ?> / <?php echo $number_of_image_rows;?></div>
+        <img src="upload/<?php  echo $row['image_name'] ?>" style="width:100%">
+    </div>
+   
+   
+ 
+  <?php 
+  } 
+
+  ?>
+ </div>
+   <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+<div class="row">
+         <?php 
+            $count =0;
+            foreach ($images  as $row) {
+                $count +=1;
+              
+          ?>
+  
+    <div class="column">
+      <img class="demo cursor" src="upload/<?php  echo $row['image_name'] ?>" style="width:100%" onclick="currentSlide(<?php echo $count  ?>)" alt="<?php  echo $row['image_name'] ?>">
+    </div>
+     <?php 
+          } 
+
+      ?>
+  
+</div>
+</div>
+<br>
+<div class="col-sm-4 col-md-8 col-lg-12">
+<h1 id ="mid_heading"> Related Information below:-</h1>
+</div>
+<br>
+<br>
+    <div class="container" id="table">
+         <div class="row">
+             <div class="col-lg-12 ">
+  
+              <table class="table table-responsive"  >
+                  <tr>
+                        <th>Name:</th><td><?php echo $result['name'] ?></td>
+                  </tr>
+                  <tr>
+                       <th>Owner or Manager Name:</th><td><?php echo $users['name'] ?></td>
+                  </tr>
+                  <tr>
+                       <th>Address:</th>
+                       <td><?php echo $result['address'] ?></td>
+                 </tr>
+                  <tr>
+                       <th>Pincode:</th><td><?php echo $result['pincode'] ?></td>
+                  </tr>
+                  <tr>
+                       <th>City Or District:</th><td><?php echo $result['city'] ?></td>
+                  </tr>
+                  <tr>
+                       <th>State :</th><td><?php echo $result['state'] ?></td>
+                  </tr>
+                  <tr>
+                        <th>Contact Number:</th><td><?php echo $users['mobile'] ?></td>
+                  </tr>
+                  <tr>
+                        <th>Website:</th><td><a id="url_link" href="#"><?php echo $result['url'] ?></a></td>
+                  </tr>
+                  <tr>
+                        <th>Email Id:</th><td><?php echo $result['email'] ?></td>
+                   </tr>
+                   <tr>
+                         <th>Faciality & Services:</th><td><?php echo $result['info'] ?></td>
+                  </tr>
+
+              </table>
+
+            </div>
+          </div>
+  
+    </div>
+
+
+    <br>
+    <br>
+
+
+
+    <footer class="container-fluid text-center">
+        <p>&copy;All Copy right www.EventsHall.com 2018-2019</p>
+        <div class="col-lg-12">
+  </footer>
+   <script src="assets/js/userfinalpage.js" type="text/javascript"></script>
