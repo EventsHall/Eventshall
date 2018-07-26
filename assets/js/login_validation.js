@@ -5,9 +5,7 @@
         method: 'post',
         data:'action=checkCookies'
    }).done(function(result){
-       // console.log(result);
         var data = JSON.parse(result); 
-      //  console.log(data);
         $('#email').val(data.email);
         $('#password').val(data.password);      
       })
