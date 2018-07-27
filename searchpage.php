@@ -20,6 +20,7 @@
 		$req->execute(array(
 			'UserName'=>'%'.$_POST['UserName'].'%'
 			));
+
 	
 		
 		if($req->rowCount()==0){

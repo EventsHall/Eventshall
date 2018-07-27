@@ -10,7 +10,6 @@
      $statement->bindParam(':id',$id);
      $statement->execute();
      $result = $statement->fetch();
-     //print_r($result);
      $number_of_rows = $statement->rowCount();
 
      $stmt =$db->connect()->prepare('SELECT * FROM guestHouse_image  where email = :email ORDER BY image_id DESC limit 10');
