@@ -1,6 +1,9 @@
 <?php 
 	session_start();
 
+	$url = $_SERVER['PHP_SELF'];
+	$arr = explode('/',$url,-1);
+
 	if(isset($_POST['action']) && ($_POST['action'] == 'checkCookies')) {
 		
 		if (isset($_COOKIE['email'], $_COOKIE['password'])){
@@ -81,7 +84,7 @@
 		if($objUser->saveIntoTable()){
 			$lastId = $objUser->conn->lastInsertId();
 			$token = sha1($lastId);
-			$url = 'http://'.$_SERVER['SERVER_NAME'].'/my_project/Eventshall/verify.php?id='.$lastId.'&token='.$token;
+			$url = 'http://'.$_SERVER['SERVER_NAME'].''.join("/",$arr).'/verify.php?id='.$lastId.'&token='.$token;
 			$html = "<div>Thanks for the registration with localhost. Please click this link to complete your registration<br>".$url."</div>";
 			
 			sendMailToUserId($objUser,$html);
