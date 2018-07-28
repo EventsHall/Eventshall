@@ -38,7 +38,39 @@
 
 </head>
 <body>
-<h2 class="blink" id="top_heading" style=";">Details</h2>  
+
+  <!-- heading section using navbar -->
+
+  <div class="navbar navbar-inverse navbar-fixed navbar-custom">
+      <div class="container">
+          <div class="navbar-header" <a href="#" class="pull-left">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+              </button>
+              <a class="pull-left" href="#"><img  src="assets/images/logo.png" alt="Brand" width="100px" height="50px"></a>
+              <a class="navbar-brand" href="#">Events Hall</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li ><a href="home.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                       <li><a href="searchpage.html"><span class="glyphicon glyphicon-search"></span> Search</a></li>
+                       
+                       <li class="active"><a href="searchpage.html"><span class="glyphicon glyphicon-home"></span> Details Page</a></li>
+                           <li><a href="login.html"><span class="glyphicon glyphicon-user"></span>SignIn</a></li>
+                                <li><a href="signUp.html"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>
+                                     <li><a href="aboutUs.html"><span class="glyphicon glyphicon-book"></span>AboutUs</a></li>
+                                         <li><a href="contactUs.html"><span class="glyphicon glyphicon-earphone"></span> ContactUs</a></li>
+                   
+              </ul>
+              
+          </div>
+      </div>
+  </div><br>
+
+<h2 class="blink" id="top_heading"><?php echo $result['name'] ?></h2>  
 </div><br><br>
 
 <div class="container" >
@@ -99,29 +131,29 @@
   
               <table class="table table-responsive"  >
                   <tr>
-                        <th>Name:</th><td><?php echo $result['name'] ?></td>
+                        <th>Name:</th><td class="table_data"><?php echo $result['name'] ?></td>
                   </tr>
                   <tr>
-                       <th>Owner or Manager Name:</th><td><?php echo $users['name'] ?></td>
+                       <th>Owner or Manager Name:</th><td class="table_data"><?php echo $users['name'] ?></td>
                   </tr>
                   <tr>
                        <th>Address:</th>
-                       <td><?php echo $result['address'] ?></td>
+                       <td class="table_data"><?php echo $result['address'] ?></td>
                  </tr>
                   <tr>
                        <th>Pincode:</th><td><?php echo $result['pincode'] ?></td>
                   </tr>
                   <tr>
-                       <th>City Or District:</th><td><?php echo $result['city'] ?></td>
+                       <th>City Or District:</th><td class="table_data"><?php echo $result['city'] ?></td>
                   </tr>
                   <tr>
-                       <th>State :</th><td><?php echo $result['state'] ?></td>
+                       <th>State :</th><td class="table_data"><?php echo $result['state'] ?></td>
                   </tr>
                   <tr>
                         <th>Contact Number:</th><td><?php echo $users['mobile'] ?></td>
                   </tr>
                   <tr>
-                        <th>Website:</th><td><a id="url_link" href="#"><?php echo $result['url'] ?></a></td>
+                        <th>Website:</th><td><a id="url_link" href="<?php echo $result['url'] ?>"><?php echo $result['url'] ?></a></td>
                   </tr>
                   <tr>
                         <th>Email Id:</th><td><?php echo $result['email'] ?></td>

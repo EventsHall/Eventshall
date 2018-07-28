@@ -95,6 +95,22 @@
 		echo "Error creating table: " . mysqli_error($conn);
 	}
 
+	$table = "CREATE TABLE contactUs (
+		contactUsId INT(6) PRIMARY KEY AUTO_INCREMENT NOT NULL, 
+		visiterName VARCHAR(250) NOT NULL,
+		visiterEmail VARCHAR(50) NOT NULL,
+		visiterMobile BIGINT(10) NOT NULL,
+		visiterRequest VARCHAR(250) NOT NULL
+		
+		
+	)";
+	if (mysqli_query($conn, $table)) {
+		echo "Table contactUs created successfully";
+	} else {
+		echo "Error creating table: " . mysqli_error($conn);
+	}
+
+
 
 	mysqli_close($conn);
 	 

@@ -31,7 +31,7 @@
 
 </head>
 <body>
-<h2 class="blink" id="top_heading" style=";">Gallary Picture</h2>  
+<h2 class="blink" id="top_heading" ><?php echo $guestdata['name'] ?></h2>  
 </div><br><br>
 
 <div class="container" >
@@ -45,7 +45,7 @@
      
     <div class="mySlides">
         <div class="numbertext"><?php echo $count ?> / 10</div>
-        <img src="upload/<?php  echo $row['image_name'] ?>" style="width:100%">
+        <img src="upload/<?php  echo $row['image_name'] ?>" style="width:640px; height: 460px">
     </div>
    
    
@@ -92,29 +92,30 @@
   
               <table class="table table-responsive"  >
                   <tr>
-                        <th>Name:</th><td><?php echo $guestdata['name'] ?></td>
+                        <th>Name:</th><td class="table_data"><?php echo $guestdata['name'] ?></td>
+                        
                   </tr>
                   <tr>
-                       <th>Owner or Manager Name:</th><td><?php echo $_SESSION['username'] ?></td>
+                       <th>Owner or Manager Name:</th><td class="table_data"><?php echo $_SESSION['username'] ?></td>
                   </tr>
                   <tr>
                        <th>Address:</th>
-                       <td><?php echo $guestdata['address'] ?></td>
+                       <td class="table_data"><?php echo $guestdata['address'] ?><?php echo $guestdata['hallArea'] ?></td>
                  </tr>
                   <tr>
                        <th>Pincode:</th><td><?php echo $guestdata['pincode'] ?></td>
                   </tr>
                   <tr>
-                       <th>City Or District:</th><td><?php echo $guestdata['city'] ?></td>
+                       <th>City Or District:</th><td class="table_data"><?php echo $guestdata['city'] ?></td>
                   </tr>
                   <tr>
-                       <th>State :</th><td><?php echo $guestdata['state'] ?></td>
+                       <th>State :</th><td class="table_data" ><?php echo $guestdata['state'] ?></td>
                   </tr>
                   <tr>
                         <th>Contact Number:</th><td><?php echo $_SESSION['mobile'] ?></td>
                   </tr>
                   <tr>
-                        <th>Website:</th><td><a id="url_link" href="#"><?php echo $guestdata['url'] ?></a></td>
+                        <th>Website:</th><td><a id="url_link" href="<?php echo $guestdata['url'] ?>"><?php echo $guestdata['url'] ?></a></td>
                   </tr>
                   <tr>
                         <th>Email Id:</th><td><?php echo $guestdata['email'] ?></td>

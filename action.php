@@ -417,6 +417,47 @@
 		return $users;
 	}
 
+	if(isset($_POST['action']) && ($_POST['action'] == 'contactUs')) {
+		$users['username'] = filter_input(INPUT_POST,'username' ,FILTER_SANITIZE_STRING);
+		if(false == $users['username']){
+			echo "Enter valid name";
+			exit;
+		}
+
+		$users['monumber'] = filter_input(INPUT_POST,'mobile_number' , FILTER_SANITIZE_NUMBER_INT);
+		if(false == $users['monumber']){
+			echo "Enter valid Mobile Number";
+			exit;
+		}
+
+		$users['email'] = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
+		if(false == $users['email']){
+			echo "Enter valid email";
+			exit;
+		}
+
+		$users['details'] = filter_input(INPUT_POST,'comment1' ,FILTER_SANITIZE_STRING);
+		if(false == $users['details']){
+			echo json_encode(["status" => 0, "msg" => "enter valid description"]);
+			exit;
+		}
+
+		require 'contactus_connection.php';
+
+		$contact = new ContactUs();
+		$contact->setName($users['username']);
+		$contact->setMobile($users['monumber']);
+		$contact->setMsg($users['details']);
+		$contact->setEmail($users['email']);
+
+		if($contact->saveIntoTable()){
+				echo  "data saves in contactUs table";
+			}else{
+				echo  "data not save";
+			}
+
+
+	}
 
 
 

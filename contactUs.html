@@ -7,7 +7,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/additional-methods.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
   <link rel="stylesheet" type="text/css" href="assets/css/home.css">
+  
   <style type="text/css">
     body{background-color:;}
     form{
@@ -16,6 +20,16 @@
      
        color: white;
     }
+    .valid{
+        border: solid green;
+      }
+      .error{
+        color:#4d0026;
+      }
+
+  .alert{
+  display: none;
+}
   </style>
 </head>
 
@@ -83,16 +97,21 @@
 <!----------- close our information tag ----->
 
 <!------ start google map link ----->
-             <br><br><p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14292.76340863821!2d80.29649622118923!3d26.417316995862087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDI1JzAyLjMiTiA4MMKwMTgnMTguOSJF!5e0!3m2!1sen!2sin!4v1528703658212" width="60%" height="250" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+             <br><br><p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14292.76340863821!2d80.29649622118923!3d26.417316995862087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDI1JzAyLjMiTiA4MMKwMTgnMTguOSJF!5e0!3m2!1sen!2sin!4v1528703658212" width="50%" height="200" frameborder="0" style="border:0" allowfullscreen></iframe></p>
           </div>
 <!----- close google map link ----->
 <br><br>
           <div class="col-md-4"><br>
-             <form id="ContactUs" name="ContactUs" action=" "  method="post">
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-leble="Close">x</button>
+              <div id="result"></div>
+            
+              </div>
+             <form id="contactUs" name="ContactUs" action=" "  method="post">
             <h4><strong><center><p>HELLO,</p>          <p>WE ARE ALWAYS READY TO SERVE YOU!</p></center></strong></h4>
             <!---strat name input tag ----->
             <br><div class="form-group">
-             <input type="text" id="text1" class="form-control" placeholder="Name">
+             <input type="text" id="text1" class="form-control" placeholder="Name" name="username">
               </div>
 <!--------close name input tag -----> 
 
@@ -100,30 +119,31 @@
 
               <div class="form-group">
                 
-                <input type="Email" class="form-control" placeholder="Email">
+                <input type="email" name="email" class="form-control" placeholder="Email">
               </div>
 <!---------close email input tag ------->
 
 <!---------- strat mobile no. tag ------->
               <div class="form-group ">
                 
-                <input type="tel" class="form-control" placeholder="Mobile No.">
+                <input type="number" class="form-control" placeholder="Mobile No." name="mobile_number">
               </div>
 <!---------- close mobile no. tag ------>
 
 <!---------- start message tag -------->
               <div class="form-group">
                 
-                <textarea class="form-control" rows="3" placeholder="Message,Suggestion"></textarea>
+                <textarea class="form-control" rows="3" placeholder="Message,Suggestion" name="comment1"></textarea>
               </div>
 <!---------- close message tag ----->
 
 <!----- start submit btn tag ------->
               <div class="form-group">
-                <input type="hidden" name="save" value="Contact">
-                <button type="submit" class="btn btn-success btn-block">Submit</button>
+              
+                <button type="submit" id="register" class="btn btn-success btn-block">Submit</button>
           </div>
 <!-------- close submit btn tag ----->
+          </form>
 
         </div>
 </div>
@@ -136,7 +156,7 @@
 <footer class="container-fluid text-center">
   <p>&copy;Copy right www.EventsHall.com 2018-2019</p>
 </footer>
-
+<script type="text/javascript" src="assets/js/contactus_page_validation.js"></script>
 
 </body>
 </html>

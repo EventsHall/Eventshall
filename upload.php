@@ -44,6 +44,8 @@
         <div class="col-md-4">
           
             <input type="file" name="files[]" accept="image/x-png,image/gif,image/jpeg"  multiple />
+
+            <input type="file" name="file" accept="image/x-png,image/gif,image/jpeg"  multiple />
         </div>
         <div class="col-md-6">
           <input type="submit" class="btn btn-success" name="submit" value="Upload Image">

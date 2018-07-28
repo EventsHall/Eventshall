@@ -295,7 +295,7 @@
         <h3 id="photo_top_heading"> Photography Studio Services Form   </h3>
             <a href=""><h4 class="head4 text-center">Studio</h4></a>
               <div class="img">
-                  <img src="assets\images\photostudio.png" id="guest_image" class="img-responsive" alt="Image">
+                  <img src="assets\images\photostudio.jpg" id="guest_image" class="img-responsive" alt="Image">
               </div><br><br>
   
   <!-- Trigger the modal with a button -->
